@@ -1,0 +1,41 @@
+{
+    "name": "Cat 0",
+    "symbol": "CAT",
+    "description": "Celebratory Solflare NFT for the Solflare X launch",
+    "seller_fee_basis_points": 10,
+    "image": "0.png",
+    "attributes": [
+      {
+        "trait_type": "dog",
+        "value": "yes"
+      },
+      {
+        "trait_type": "mobile",
+        "value": "yes"
+     },
+     {
+        "trait_type": "extension",
+        "value": "yes"
+      }
+    ],
+    "collection": {
+       "name": "Solflare X NFT",
+       "family": "Solflare"
+    },
+    "properties": {
+      "files": [
+        {
+          "uri": "0.png",
+          "type": "image/png"
+        }
+      ],
+      "category": "image",
+      "creators": [
+        {
+          "address": "Fzw2pjcNHRWKACEunF9SuFfqtaLHXsw8zndi1W9zFCRr",
+          "share": 100
+        }
+      ]
+    }
+  }
+  
