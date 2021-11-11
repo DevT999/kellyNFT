@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/main.css";
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import { WalletBalanceProvider } from "../hooks/useWalletBalance";
