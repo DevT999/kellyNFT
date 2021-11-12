@@ -4,17 +4,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from "react";
 import { getSortedPostsData } from '../lib/posts'
-import { Navbar } from '../components/Navbar';
+import { Navbar } from '../components/Navbar/Navbar';
+import Layout from '../components/Layout/layout'
 
-export default function Home({ allPostsData }) {
+export default function Home(initialData) {
  
   const router = useRouter()
   return (
-    <div>
-      <Head>
-        <title>NFT App</title>
-      </Head>
-      <Navbar />
+    <Layout>
       <div className="flex flex-row justify-center items-center min-h-screen">
         <button
           onClick={()=>router.push('/solana')}
@@ -29,7 +26,7 @@ export default function Home({ allPostsData }) {
           ETH NFT
         </button>
       </div>
-    </div>
+    </Layout>
   );
 }
 

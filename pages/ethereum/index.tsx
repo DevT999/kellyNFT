@@ -7,7 +7,7 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import useCandyMachine from "../../hooks/useCandyMachine";
 import useWalletBalance from "../../hooks/useWalletBalance";
 import { useWallet } from "@solana/wallet-adapter-react";
-
+import Layout from '../../components/Layout/layout'
 import { Toaster } from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../../hooks/useWalletNFTs";
@@ -70,8 +70,8 @@ export default function Ethereum() {
     };
   
     return (
-      <>
-        <body className="gradient leading-relaxed tracking-wide flex flex-col">
+      <Layout>
+        <body className="gradient leading-relaxed tracking-wide flex flex-col bg-transparent">
         <Head>
           <title>MetaEggs.city</title>
           <meta
@@ -260,6 +260,6 @@ export default function Ethereum() {
       </footer>
   
         </body>
-      </>
+      </Layout>
     );
 }
