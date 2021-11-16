@@ -30,6 +30,39 @@ Use a better box model (opinionated).
   font-style: normal;
 }
 
+.title-box {
+  text-align: center;
+  width: 300px;
+  height: 100px;
+}
+.title-text {
+  font-family: Lora;
+  letter-spacing: 5px;
+  /* stroke: #ffa5d8; */
+  font-size: 50px;
+  font-weight: 400;
+  stroke-width: 1;
+ 
+  animation: textAnimate 5s; /* infinite alternate; */
+  
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset:  20%;
+    fill:hsl(186, 33%, 6%)
+
+  }
+  
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: hsla(189, 68%, 75%,0%)
+  }
+  
+}
+
 #wallet-adapter-modal-title {
   position: relative !important;
 }

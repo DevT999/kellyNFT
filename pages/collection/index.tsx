@@ -11,7 +11,7 @@ import useCandyMachine from "../../hooks/useCandyMachine";
 import useWalletBalance from "../../hooks/useWalletBalance";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Layout from '../../components/Layout/layout';
-import { BasicView, DynamicCard, Loading } from '../../components';
+import { BasicView, DynamicCard, Loading, Title } from '../../components';
 import { Toaster } from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../../hooks/useWalletNFTs";
@@ -52,13 +52,16 @@ export default function Collection() {
   
     return (
       <Layout>
-        <BasicView
+        {/* <BasicView
           title="My NFTs"
           subtitle=""
           maxWidth="lg"
           otherFont
           className={classes.fullScreen}
-        >
+        > */}
+        <div className="flex flex-col w-full items-center">
+          <Title title='My NFTs'/>
+        </div>
           <div className="flex flex-col w-full">
             <div className="flex mt-3 gap-x-2">
               {(nfts as any).map((nft: any, i: number) => {
@@ -66,7 +69,7 @@ export default function Collection() {
               })}
             </div>
           </div>
-        </BasicView>
+        {/* </BasicView> */}
       </Layout>
     );
 }

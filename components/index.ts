@@ -1,4 +1,5 @@
 export { BasicView } from './BasicView/BasicView';
+export { Title } from './Title/Title';
 // export { ConnectOverlay } from './ConnectOverlay/ConnectOverlay';
 // export { Description } from './Description/Description';
 export { DynamicCard } from './DynamicCard/DynamicCard';
