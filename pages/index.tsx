@@ -103,10 +103,10 @@ export default function Home() {
         <div className="flex flex-col items-center min-h-screen mx-6">
           <Toaster />
           <div className="flex items-center justify-start w-full mt-3">
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" width="24">
+          {/* <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" width="24">
           <path d="M462.411,92.274c-29.294-51.592-66.951-80.001-106.035-80.001c-51.075,0-93.527,48.959-119.298,107.668   c6.115-0.528,12.281-1.175,18.186-1.175c6.254,0,12.294,0.406,18.228,1.005c21.271-42.257,51.543-73.945,82.893-73.945   c26.098,0,54.116,22.97,76.855,63.02c22.011,38.772,35.685,88.112,35.685,128.767c0,38.412-12.1,74.39-34.087,101.292   c-20.778,25.423-47.992,39.553-76.786,40.088c-5.482,11.204-11.62,22.025-18.146,32.465c5.416,0.731,10.897,1.189,16.472,1.189   c39.672,0,76.766-18.652,104.438-52.51c26.868-32.881,41.672-76.396,41.664-122.524C502.485,190.797,487.502,136.46,462.411,92.274   z"/>
       <path d="M330.015,179.09c-17.507-17.513-43.36-26.77-74.751-26.77c-60.905,0-139.924,34.823-187.904,82.803   c-68.245,68.247-77.42,170.102-20.455,227.068c24.199,24.208,57.9,37.537,94.894,37.537c47.153,0,95.329-21.136,132.176-57.991   c33.11-33.103,60.938-82.115,74.447-131.095C364.191,253.448,357.654,206.73,330.015,179.09z M316.071,301.722   c-11.853,42.982-37.075,87.546-65.82,116.29c-30.604,30.606-70.131,48.162-108.452,48.162c-28.434,0-53.042-9.576-71.169-27.706   c-43.885-43.883-34.701-124.459,20.455-179.623c41.598-41.597,112.178-72.973,164.18-72.973c22.619,0,39.788,5.702,51.027,16.941   C324.747,221.271,328.31,257.322,316.071,301.722z"/>  </svg>
-            <h1 className="text-2xl font-bold text-black ml-2">MetaEggs.city</h1>
+            <h1 className="text-2xl font-bold text-black ml-2">MetaEggs.city</h1> */}
             <div className="flex items-center ml-auto">
               {connected && (
                 <div className="bg-white rounded-md mr-2 " style={{height: '50px'}}>
@@ -143,26 +143,26 @@ export default function Home() {
   
   <div className="flex flex-wrap mt-8">
             <div className="w-full sm:w-1/2 p-6 pt-12">
-            <h2
+            {/* <h2
           className="w-full my-2 text-5xl font-black leading-tight text-center text-transparent bg-clip-text bg-gradient-to-br from-yellow-200 to-yellow-500"
         >
           MetaEggs
-        </h2>
+        </h2> */}
         <div className="w-full mb-4">
           <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t" ></div>
         </div>
         <div>
-          <h3 className="my-4 text-3xl font-extrabold text-center">
+          {/* <h3 className="my-4 text-3xl font-extrabold text-center">
             Chapter 1: The Eggs
-          </h3>
+          </h3> */}
         </div>
   
-        <div className="pt-4">
+        {/* <div className="pt-4">
            
             <p className="text-center">7777 eggs, balblzai bflaze bfezl bfzbeizefblifezilb</p>
             <p className="text-center">balarbl brlzlbzelb bfzleb</p>
             <p className="text-center">fezezezf !</p>
-          </div>
+          </div> */}
         <div className="flex items-start justify-center  my-10">
             {connected ? (
               <>
@@ -173,7 +173,7 @@ export default function Home() {
                     ) : (
                       <>
                         <div className="flex flex-col">
-                          <h1 className="mb-10 text-3xl font-bold">&#128296 Mint an Egg</h1>
+                          {/* <h1 className="mb-10 text-3xl font-bold">&#128296 Mint an Egg</h1> */}
                           <button
                             onClick={startMint}
                             disabled={isMinting}
