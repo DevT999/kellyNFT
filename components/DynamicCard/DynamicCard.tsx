@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react';
 
 import { Box, Button, Grid, Paper, Typography } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
-import { getRoute } from '../../router';
+// import { getRoute } from '../../router';
 import { formatCardNumber } from '../../utils/formatting';
 
 import useStyles from './DynamicCard.style';
@@ -29,13 +29,13 @@ export function DynamicCard({
   name = 'Samurai',
 }: DynamicCardProps): ReactElement {
   const classes = useStyles({ width });
-  const history = useHistory();
+  // const history = useHistory();
 
   /**
    * A function that handles redirection to the details of a card
    */
-  const handleViewCard = () =>
-    history.push(getRoute('details').path.replace(':id', id.toString()));
+  const handleViewCard = () =>{}
+    // history.push(getRoute('details').path.replace(':id', id.toString()));
 
   /**
    * The component that handles the card displaying and layering logic

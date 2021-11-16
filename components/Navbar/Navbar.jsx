@@ -47,17 +47,17 @@ export default function Navbar() {
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
                   <Link href="/">
-                    <a className={clsx(classes.navLink)}>HOME</a>
+                    <a className={clsx(classes.navLink)}>PURCHASE</a>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link href="/solana">
-                    <a className={clsx(classes.navLink)}>SOL NFT</a>
+                {/* <li className="nav-item">
+                  <Link href="/purchase">
+                    <a className={clsx(classes.navLink)}>PURCHASE</a>
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                  <Link href="/ethereum">
-                    <a className={clsx(classes.navLink)}>ETH NFT</a>
+                  <Link href="/collection">
+                    <a className={clsx(classes.navLink)}>COLLECTION</a>
                   </Link>
                 </li>
               </ul>

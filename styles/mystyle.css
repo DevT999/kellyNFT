@@ -12,6 +12,7 @@
     height: 50px;
     line-height: 50px;
     padding: 0 20px;
+    z-index: 10;
 }
 
 .wallet-adapter-button-trigger {

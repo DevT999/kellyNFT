@@ -17,6 +17,19 @@ Use a better box model (opinionated).
   box-sizing: border-box;
 }
 
+
+.text-line {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: dash 4s linear forwards, filling 3s ease-in forwards;
+}
+
+.text-line text {
+  font-family: Helvetica;
+  font-weight: normal;
+  font-style: normal;
+}
+
 #wallet-adapter-modal-title {
   position: relative !important;
 }
