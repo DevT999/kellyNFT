@@ -34,7 +34,7 @@ export default function Navbar() {
                   className={clsx(classes.logoText, 'no-select')}
                   variant="h5"
                 >
-                  Art | Basel
+                  KM | NFT
                 </Typography>
               </a>
             </Link>

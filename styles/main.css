@@ -17,6 +17,10 @@ Use a better box model (opinionated).
   box-sizing: border-box;
 }
 
+#wallet-adapter-modal-title {
+  position: relative !important;
+}
+
 /**
 Use a more readable tab size (opinionated).
 */
