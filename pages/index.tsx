@@ -15,7 +15,7 @@ import { Toaster } from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../hooks/useWalletNFTs";
 import AnNFT from "../components/AnNFT/AnNFT";
-
+import ReactLoading from 'react-loading';
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -74,6 +74,7 @@ export default function Home() {
     };
 
   const router = useRouter()
+  
   return (
     <Layout>
       {/* <div className="flex flex-row justify-center items-center min-h-screen">
@@ -163,8 +164,7 @@ export default function Home() {
             <p className="text-center">balarbl brlzlbzelb bfzleb</p>
             <p className="text-center">fezezezf !</p>
           </div> */}
-        <div className="flex items-start justify-center  my-10">
-            {connected ? (
+            <div className="flex items-start justify-center  my-10">
               <>
                 {new Date(mintStartDate).getTime() < Date.now() ? (
                   <>
@@ -172,14 +172,14 @@ export default function Home() {
                       <div className="border border-black rounded w-auto"><p className="m-2">&#9888; Sold out</p></div>
                     ) : (
                       <>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col pr-4">
                           {/* <h1 className="mb-10 text-3xl font-bold">&#128296 Mint an Egg</h1> */}
                           <button
                             onClick={startMint}
-                            disabled={isMinting}
-                            className="px-4 py-2 mx-auto font-bold text-white transition-opacity rounded-lg hover:opacity-70 bg-gradient-to-br from-green-300 via-blue-500 to-purple-600"
+                            disabled={isMinting||!connected}
+                            className={["z-10 px-4 py-2 mx-auto font-bold text-white transition-opacity rounded-lg hover:opacity-70 bg-gradient-to-br from-green-300 via-blue-500 to-purple-600", (isMinting||!connected)?'cursor-not-allowed':'cursor-allowed'].join(' ')}
                           >
-                            {isMinting ? "loading" : "Mint"}
+                            {isMinting ? <ReactLoading type="bars" color="white" height={20} width={20}/>:'Mint'}
                           </button>
                         </div>
                         {/* <div className="flex flex-col w-1/2">
@@ -197,15 +197,8 @@ export default function Home() {
                   />
                 )}
               </>
-            ) : (
-              <div className="border border-black rounded w-auto"><p className="m-2">&#128161; Connect your wallet</p></div>
-            )}
-  
-              
-  
-              
-  
-              </div>
+              {!connected&&<div className="border border-black rounded w-auto"><p className="m-2">&#128161; Connect your wallet</p></div>}
+            </div>
   
               <div className="hidden">
                 <div className="hero-cta">
