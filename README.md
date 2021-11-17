@@ -65,7 +65,7 @@ The following commands assume your images and metadata are located at the home d
 1. Upload assets
 
 ```
-ts-node ~/metaplex-foundation/metaplex/js/packages/cli/src/candy-machine-cli.ts upload ~/assets --env devnet --keypair ~/.config/solana/devnet.json
+ts-node ~/metaplex-foundation/metaplex/js/packages/cli/src/candy-machine-cli.ts upload ./assets --env devnet --keypair ~/.config/solana/devnet.json
 ```
 
 #### This will output our 2nd required environment variable into the terminal as `initialized config for a candy machine with publickey`, and will be a SOL address. Set `NEXT_PUBLIC_CANDY_MACHINE_CONFIG` in our `.env.local` to this address.
