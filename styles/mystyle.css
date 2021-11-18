@@ -331,3 +331,347 @@
     align-items: center;
     cursor: pointer;
   }
+/*------------ marquee css ----------*/
+
+.marquee {
+    width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .marquee span {
+    display: inline-block;
+    width: max-content;
+    font-size: 24px;
+    font-style: italic;
+    padding-left: 100%;
+    /* show the marquee just outside the paragraph */
+    will-change: transform;
+    animation: marquee 15s linear infinite;
+    color: #ccc;
+  }
+  
+  .marquee span:hover {
+    animation-play-state: paused
+  }
+  
+  
+  @keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+  }
+  
+  
+  /* Respect user preferences about animations */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .marquee span {
+      animation-iteration-count: 1;
+      animation-duration: 0.01; 
+      /* instead of animation: none, so an animationend event is 
+       * still available, if previously attached.
+       */
+      width: auto;
+      padding-left: 0;
+    }
+  }
+/*------------ card css ----------*/
+.card {
+    backdrop-filter: blur(12px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.5) !important;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    width: 100%;
+    height: 100%;
+}
+/*------------ title css ----------*/
+.text-line {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: dash 4s linear forwards, filling 3s ease-in forwards;
+  }
+  
+  .text-line text {
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes filling {
+    0%, 90% { fill: black; fill-opacity: 0; }
+    100% { fill: black; fill-opacity: 1; }
+  }
+  /*------------ text blink css ----------*/
+
+  .blink {
+    font-size: 24px;
+    font-style: italic;
+    color: #ccc;
+    animation: blinker 5s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  /*------------ story css ----------*/
+.story {
+    display: flex;
+    margin: 150px 0;
+}
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="2000"], body[data-aos-duration="2000"] [data-aos] {
+    transition-duration: 2s;
+}
+[data-aos^=fade][data-aos^=fade] {
+    opacity: 0;
+    transition-property: opacity,-webkit-transform;
+    transition-property: opacity,transform;
+    transition-property: opacity,transform,-webkit-transform;
+}
+.crowncontainer {
+    display: -webkit-flex;
+    display: flex;
+    width: 50%;
+}
+[data-aos=fade-right] {
+    -webkit-transform: translate3d(-100px,0,0);
+    transform: translate3d(-100px,0,0);
+}
+.theCrown {
+    width: 400px;
+    margin: auto;
+    -webkit-animation: float 3s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
+}
+#shine1, #shine2 {
+    -webkit-animation: shineAnimation 4s ease-in-out infinite;
+    animation: shineAnimation 4s ease-in-out infinite;
+}
+#shine1 {
+    margin-top: 50px;
+}
+.shiner {
+    position: absolute;
+    width: 100px;
+}
+#shine2 {
+    width: 70px;
+    margin-left: 260px;
+    margin-top: -30px;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+}
+#shine3 {
+    margin-top: 170px;
+    margin-left: 230px;
+    -webkit-animation: shineAnimation 4s ease-in-out infinite;
+    animation: shineAnimation 4s ease-in-out infinite;
+    -webkit-animation-delay: 1.05s;
+    animation-delay: 1.05s;
+}
+#shine4 {
+    margin-top: 220px;
+    margin-left: 9px;
+    width: 60px;
+    -webkit-animation: shineAnimation 3s ease-in-out infinite;
+    animation: shineAnimation 3s ease-in-out infinite;
+    -webkit-animation-delay: 1.65s;
+    animation-delay: 1.65s;
+}
+#shine5 {
+    margin-left: 79px;
+    width: 60px;
+    -webkit-animation: shineAnimation 3s ease-in-out infinite;
+    animation: shineAnimation 3s ease-in-out infinite;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+}
+#shine6 {
+    margin-top: 150px;
+    margin-left: 349px;
+    width: 40px;
+    -webkit-animation: shineAnimation 3s ease-in-out infinite;
+    animation: shineAnimation 3s ease-in-out infinite;
+    -webkit-animation-delay: 3.8s;
+    animation-delay: 3.8s;
+}
+.crownImage {
+    width: 100%;
+}
+@keyframes float {
+    0% {
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+    }
+    50% {
+        -webkit-transform: translatey(-12px);
+        transform: translatey(-12px);
+    }
+    100% {
+        -webkit-transform: translatey(0);
+        transform: translatey(0);
+    }
+  }
+@keyframes shineAnimation {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: .9;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+   /*------------ event css ----------*/
+   .event {
+    /* display: -webkit-flex !important; */
+    display: flex;
+    /* overflow: hidden; */
+}
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    /* -webkit-transform: translateZ(0); */
+    transform: translateZ(0);
+}
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="2000"], body[data-aos-duration="2000"] [data-aos] {
+    transition-duration: 2s;
+}
+[data-aos^=fade][data-aos^=fade] {
+    /* opacity: 0;
+    transition-property: opacity,-webkit-transform;
+    transition-property: opacity,transform; */
+    transition-property: opacity,transform,-webkit-transform;
+}
+.eventInfo {
+    width: 50%;
+    height: 100%;
+    /* background-color: rgba(9,17,40,.9411764705882353); */
+    backdrop-filter: blur(12px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.5) !important;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.event-img {
+    max-width: 92%;
+    height: 95%;
+}
+[data-aos=fade-right] {
+    /* -webkit-transform: translate3d(-100px,0,0);
+    transform: translate3d(-100px,0,0); */
+}
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    /* -webkit-transform: translateZ(0); */
+    transform: translateZ(0);
+}
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    transition-timing-function: ease;
+}
+[data-aos][data-aos][data-aos-duration="2000"], body[data-aos-duration="2000"] [data-aos] {
+    transition-duration: 2s;
+}
+[data-aos^=fade][data-aos^=fade] {
+    /* opacity: 0;
+    transition-property: opacity,-webkit-transform;
+    transition-property: opacity,transform; */
+    transition-property: opacity,transform,-webkit-transform;
+}
+.eventPhotos {
+    width: 40%;
+    overflow: visible;
+    position: relative;
+    margin: 0 auto;
+    right: 0;
+    padding-left: 50px;
+    /* display: -webkit-flex; */
+    display: flex;
+}
+[data-aos=fade-left] {
+    /* -webkit-transform: translate3d(100px,0,0);
+    transform: translate3d(100px,0,0); */
+}
+
+@keyframes grafittiAnim {
+    0% {
+        width: 75%;
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+        opacity: 0;
+        -webkit-filter: blur(20px);
+        filter: blur(20px);
+        z-index: 2;
+    }
+    5% {
+        opacity: 1;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        z-index: 1;
+    }
+    35% {
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+        z-index: 1;
+    }
+    40% {
+        z-index: 0;
+        -webkit-filter: blur(20px);
+        filter: blur(20px);
+        opacity: 0;
+        width: 60%;
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+}
+
+#grafitti1, #grafitti2, #grafitti3, #grafitti4, #grafitti5, #grafitti6 {
+    opacity: 0;
+    margin: auto;
+    width: 95%;
+    -webkit-animation: grafittiAnim 21s linear infinite;
+    animation: grafittiAnim 21s linear infinite;
+    position: absolute;
+}
+#grafitti2 {
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
+}
+#grafitti3 {
+    -webkit-animation-delay: 14s;
+    animation-delay: 14s;
+}
+#grafitti4 {
+    -webkit-animation-delay: 28s;
+    animation-delay: 28s;
+}
+#grafitti5 {
+    -webkit-animation-delay: 35s;
+    animation-delay: 35s;
+}
+#grafitti6 {
+    -webkit-animation-delay: 42s;
+    animation-delay: 42s;
+}

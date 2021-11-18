@@ -14,6 +14,7 @@ import {
   Button,
   Typography,
 } from '@material-ui/core';
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import clsx from 'classnames';
 import useStyles from './Navbar.style.ts';
 
@@ -44,7 +45,7 @@ export default function Navbar() {
 
             <div className={classes.grow} />
             <Hidden smDown>
-              <ul className="navbar-nav mr-auto">
+              <ul className="navbar-nav mr-auto flex items-center">
                 <li className="nav-item active">
                   <Link href="/">
                     <a className={clsx(classes.navLink)}>PURCHASE</a>
@@ -59,6 +60,9 @@ export default function Navbar() {
                   <Link href="/collection">
                     <a className={clsx(classes.navLink)}>COLLECTION</a>
                   </Link>
+                </li>
+                <li className="nav-item">
+                  <WalletMultiButton />
                 </li>
               </ul>
             </Hidden>

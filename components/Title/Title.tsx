@@ -6,36 +6,53 @@ import type {
 } from 'react';
 
 import { Box, Container, Grid, Typography } from '@material-ui/core';
+import useStyles from './Title.style';
 import clsx from 'classnames';
 
 export interface TitleProps {
-  title: ReactNode;
+  title: string;
+  subtitle?: string;
+  otherFont?: false | true;
+  maxWidth?: false | 'md' | 'xs' | 'sm' | 'lg' | 'xl' | undefined;
+  mobileMultiLine?: string[];
 }
 
-export function Title({ title }: TitleProps): ReactElement{
- 
+export function Title({ 
+  subtitle,
+  title,
+  maxWidth,
+  otherFont,
+  mobileMultiLine,
+  ...rest }: TitleProps): ReactElement{
+  const classes = useStyles();
+  
   return (
-    <div className='title-box'>
-      <svg className='title-text' width="100%" height="100%">
-        <defs>
-          <pattern id="polka-dots" x="0" y="0"                    width="100" height="100"
-                  patternUnits="userSpaceOnUse">
-            <circle fill="#be9ddf" cx="25" cy="25" r="3"></circle>
-          </pattern>  
-            <style>
-        @import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
-      </style>
-          
-        </defs>
-                  
-        <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)"> </rect>
-        
-        
-      
-    <text x="50%" y="60%"  text-anchor="middle"  >
-    {title}
-    </text>
-    </svg>
-    </div>
+    <Container maxWidth={maxWidth}>
+      <Grid container justifyContent="center" direction="column">
+        <Grid item xs={12}>
+          <Typography
+              variant="h2"
+              className={clsx({
+                [classes.title]: true,
+                [classes.superStarFont]: otherFont,
+              })}
+            >
+            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+              <svg
+                height="100"
+                stroke="black"
+                strokeWidth="2"
+                className="text-line"
+                width="100%"
+              >
+                <text x="50%" dominantBaseline="middle" textAnchor="middle" y="50%">
+                  {title}
+                </text>
+              </svg>
+            </Box>
+          </Typography>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
