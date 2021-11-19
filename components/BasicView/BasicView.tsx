@@ -75,8 +75,9 @@ export function BasicView({
             >
               <Box sx={{ display: { sm: 'block', lg: 'none', md: 'none' } }}>
                 {mobileMultiLine
-                  ? mobileMultiLine.map((line) => (
+                  ? mobileMultiLine.map((line, index) => (
                       <svg
+                        key={index}
                         height="50"
                         stroke="black"
                         strokeWidth="2"

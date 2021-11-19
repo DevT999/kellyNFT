@@ -277,10 +277,10 @@ export default function Home() {
             <div data-aos="fade-left" className="eventPhotos aos-init aos-animate">
               <img className="event-img" src="./cards/7.png" id="grafitti1"/>
               <img className="event-img" src="../cards/8.png" id="grafitti2"/>
-              <img className="event-img" src="../cards/9.png" id="grafitti3"/>	
+              <img className="event-img" src="../cards/3.png" id="grafitti3"/>	
               <img className="event-img" src="./cards/11.png" id="grafitti4"/>
               <img className="event-img" src="../cards/6.png" id="grafitti5"/>
-              <img className="event-img" src="../cards/10.jpg" id="grafitti6"/>			
+              <img className="event-img" src="../cards/9.png" id="grafitti6"/>			
             </div>
           </div>
         </div>
