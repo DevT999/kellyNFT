@@ -16,7 +16,7 @@
 }
 
 .wallet-adapter-button-trigger {
-    background-color: #4e44ce;
+    background-color: #4e44ce !important;
 }
 
 .wallet-adapter-button:not([disabled]):focus-visible {
@@ -280,7 +280,7 @@
 }
 
 .wallet-adapter-button-trigger{
-    background-color: #555;
+    background-color: #4e44ce; /* #555; */
     
 }
 
@@ -655,23 +655,35 @@
     animation: grafittiAnim 21s linear infinite;
     position: absolute;
 }
+#grafitti1 {
+    /* -webkit-animation-delay: 7s; */
+    /* animation-delay: 0; */
+}
 #grafitti2 {
-    -webkit-animation-delay: 7s;
+    /* -webkit-animation-delay: 7s; */
     animation-delay: 7s;
 }
 #grafitti3 {
-    -webkit-animation-delay: 14s;
+    /* -webkit-animation-delay: 14s; */
     animation-delay: 14s;
 }
 #grafitti4 {
-    -webkit-animation-delay: 28s;
-    animation-delay: 28s;
+    /* -webkit-animation-delay: 21s; */
+    animation-delay: 21s;
 }
 #grafitti5 {
-    -webkit-animation-delay: 35s;
-    animation-delay: 35s;
+    /* -webkit-animation-delay: 28s; */
+    animation-delay: 28s;
 }
 #grafitti6 {
-    -webkit-animation-delay: 42s;
-    animation-delay: 42s;
+    /* -webkit-animation-delay: 35s; */
+    /* animation: grafittiAnim 21s linear infinite; */
+    animation-delay: 35s;
 }
+/*---------- wallet button ----------*/
+
+.wallet-adapter-button-trigger{
+    background: #4e44ce !important; /* #555; */
+    color: white;
+}
+
