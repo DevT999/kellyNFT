@@ -80,11 +80,15 @@ export default makeStyles((theme) => ({
   },
   root: {
     // backgroundColor: theme.palette.common.white,
-    backgroundColor: '#1d2327',
-    backgroundImage: 'linear-gradient(315deg, #1d2327 0%, #1d2327 74%)',
+    // backgroundImage: `url('/img/top.png')`,
+    // backgroundImage: 'linear-gradient(315deg, #1d2327 0%, #1d2327 74%)',
+    // backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    // backgroundSize: 'contain',
     color: 'white',
-    boxShadow: 'none',
-    height: 36,
+    // boxShadow: 'none',
+    height: 120,
+    width: '100vw'
   },
   links: {
     textAlign: 'right',

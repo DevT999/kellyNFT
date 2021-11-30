@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap';
 import Link from 'next/link'
-
+import { useRouter } from 'next/router'
 import {
   AppBar,
   Container,
@@ -15,61 +15,30 @@ import {
   Typography,
 } from '@material-ui/core';
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useEffect, useState } from "react";
 import clsx from 'classnames';
 import useStyles from './Navbar.style.ts';
 
 export default function Navbar() {
+  const router = useRouter();
   const classes = useStyles();
   const theme = useTheme();
+  const [isPurchase, setPurchase] = useState(true);
+  const [isCollect, setCollect] = useState(false);
   /** If the navigation bar should enable shrink mode */
   const shouldShrink = useMediaQuery(theme.breakpoints.down('md'));
   return (
-  <Nav className="navbar navbar-expand-lg">
-    <AppBar position="absolute" className={classes.root}>
-      <Toolbar>
-        <Container className={clsx({ 'no-padding': shouldShrink })}>
-          <Grid container alignItems="center">
-            <Link href="/">
-              <a className="navbar-brand text-black">
-                <Typography
-                  className={clsx(classes.logoText, 'no-select')}
-                  variant="h5"
-                >
-                  KM | NFT
-                </Typography>
-              </a>
-            </Link>
-            {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button> */}
-
-            <div className={classes.grow} />
-            <Hidden smDown>
-              <ul className="navbar-nav mr-auto flex items-center">
-                <li className="nav-item active">
-                  <Link href="/">
-                    <a className={clsx(classes.navLink)}>PURCHASE</a>
-                  </Link>
-                </li>
-                {/* <li className="nav-item">
-                  <Link href="/purchase">
-                    <a className={clsx(classes.navLink)}>PURCHASE</a>
-                  </Link>
-                </li> */}
-                <li className="nav-item">
-                  <Link href="/collection">
-                    <a className={clsx(classes.navLink)}>COLLECTION</a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <WalletMultiButton />
-                </li>
-              </ul>
-            </Hidden>
-          </Grid>
-        </Container>
-      </Toolbar>
-    </AppBar>
-  </Nav>
+      <ul className="navbar-nav mr-auto flex items-center flex-row absolute z-20" style={{top: '113px'}}>
+        <li className={["nav-item active", clsx(classes.link)].join(" ")} style={{backgroundColor: router.pathname=='/'?'rgb(75, 20, 77)':'rgb(140, 94, 124)'}}>
+          <Link href="/">
+            <a className={clsx(classes.navLink)} style={{color: router.pathname=='/'?'white':'rgb(174, 159, 169)'}}>PURCHASE</a>
+          </Link>
+        </li>
+        <li className={["nav-item", clsx(classes.link)].join(" ")} style={{backgroundColor: router.pathname=='/collection'?'rgb(75, 20, 77)':'rgb(140, 94, 124)'}}>
+          <Link href="/collection" >
+            <a className={clsx(classes.navLink)} style={{color: router.pathname=='/collection'?'white':'rgb(174, 159, 169)'}}>COLLECTION</a>
+          </Link>
+        </li>
+      </ul>
   )
 }

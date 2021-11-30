@@ -11,12 +11,48 @@ Document
 Use a better box model (opinionated).
 */
 
+@font-face {
+  font-family: 'EuroStyleNormal';
+  src: local('EuroStyleNormal'), url(../font/EuroStyleNormal.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'EurostileBold';
+  src: local('EurostileBold'), url(../font/EurostileBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'EurostileOblique';
+  src: local('EurostileOblique'), url(../font/EurostileOblique.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'EurostileExtended';
+  src: local('EurostileExtended'), url(../font/EurostileExtended.ttf) format('truetype');
+}
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
 
+
+.logo-title {
+  font-family: 'eurostile-black-italic-italic', sans-serif;
+  font-style: italic;
+  font-size: 44px;
+  font-weight: 900;
+}
+
+
+.logo-sub-title {
+  font-family: 'eurostile-black-italic-italic', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 0.2em;
+}
 
 .text-line {
   stroke-dasharray: 500;

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Box, Grid, Paper } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
-
+import ReactLoading from 'react-loading';
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import useCandyMachine from "../../hooks/useCandyMachine";
 import useWalletBalance from "../../hooks/useWalletBalance";
@@ -16,6 +16,8 @@ import { Toaster } from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../../hooks/useWalletNFTs";
 import AnNFT from "../../components/AnNFT/AnNFT";
+import NftGrid from "../../components/NftGrid";
+import NftCard from "../../components/NftCard";
 import useStyles from './Collection.style';
 import { motion } from "framer-motion";
 
@@ -23,7 +25,7 @@ const AMOUNT_PER_PAGE = 12;
 
 export default function Collection() {
     const classes = useStyles();
-
+    const [selectedIndex, setSelectedIndex] = useState(-1)
     const [balance] = useWalletBalance();
     const {
       isSoldOut,
@@ -43,7 +45,7 @@ export default function Collection() {
     const paginate = (newDirection: number) => {
       console.log(newDirection);
     };
-  
+    console.log("===>", isLoading, nfts)
     useEffect(() => {
       if (new Date(mintStartDate).getTime() < Date.now()) {
         setIsMintLive(true);
@@ -59,12 +61,12 @@ export default function Collection() {
           otherFont
           className={classes.fullScreen}
         > */}
-        <Title 
+        {/* <Title 
           title='My NFTs' 
           subtitle=""
           maxWidth="lg"
           otherFont
-        />
+        /> */}
         <div className="hidden" id="story">
           <div className="story">
             <div data-aos="fade-right" className="crowncontainer aos-init aos-animate">				
@@ -99,13 +101,18 @@ export default function Collection() {
           </div>
         </div>
 
-        <div className="flex flex-col w-full items-center">
-          <div className="flex flex-col w-full">
-            <div className="flex mt-3 gap-x-2">
-              {(nfts as any).map((nft: any, i: number) => {
-                return <AnNFT key={i} nft={nft} />;
-              })}
-            </div>
+        {/* <NftGrid>
+          {(nfts as any).map((nft: any, i: number) => {
+            return <NftCard key={i} nft={nft} />;
+          })}
+        </NftGrid> */}
+
+        <div className="w-full px-48">
+          {isLoading&&<div className="flex items-center justify-center flex-1 h-screen"><ReactLoading type="bars" color="yellow" height={30} width={50}/></div>}
+          <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
+            {(nfts as any).map((nft: any, i: number) => {
+              return <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} />;
+            })}
           </div>
         </div>
       </Layout>

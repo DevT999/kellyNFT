@@ -6,8 +6,10 @@ import dynamic from "next/dynamic";
 import { WalletBalanceProvider } from "../hooks/useWalletBalance";
 
 require("@solana/wallet-adapter-react-ui/styles.css");
-
+import 'bootstrap-icons/font/bootstrap-icons.json';
 import "../styles/mystyle.css"
+import { Provider } from 'react-redux'
+import Store from './redux/store'
 
 const WalletConnectionProvider = dynamic(
   () => import("../components/WalletConnection/WalletConnectionProvider"),
@@ -18,11 +20,13 @@ const WalletConnectionProvider = dynamic(
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <WalletConnectionProvider>
-      <WalletBalanceProvider>
-        <Component {...pageProps} />
-      </WalletBalanceProvider>
-    </WalletConnectionProvider>
+    <Provider store={Store}>
+      <WalletConnectionProvider>
+        <WalletBalanceProvider>
+          <Component {...pageProps} />
+        </WalletBalanceProvider>
+      </WalletConnectionProvider>
+    </Provider>
   );
 }
 export default MyApp;

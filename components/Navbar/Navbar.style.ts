@@ -44,7 +44,7 @@ export default makeStyles((theme) => ({
     zIndex: 999,
   },
   grow: {
-    flexGrow: 1,
+    // flexGrow: 1,
   },
   icon: {
     [theme.breakpoints.down('xs')]: {
@@ -72,13 +72,37 @@ export default makeStyles((theme) => ({
   menuIcon: {
     color: 'white',
   },
+  link: {
+    background: 'rgb(140, 94, 124)',
+    marginLeft: '20px',
+    borderBottomLeftRadius: '5px',
+    borderBottomRightRadius: '5px',
+    padding: '5px 0px',
+    '&:hover': {
+      backgroundColor: 'rgb(75, 20, 77)',
+      color: 'white',
+    },
+    active: {
+      backgroundColor: 'rgb(75, 20, 77)',
+      color: 'white',
+    },
+  },
   navLink: {
-    '&:hover': createNavLinkEffect(theme),
+    // '&:hover': createNavLinkEffect(theme),
+    '&:hover': {
+      color: 'white',
+    },
+    active: {
+      color: 'white',
+    },
     borderBottom: '2px solid transparent',
-    color: '#999',
+    color: 'rgb(174, 159, 169)',
+    fontFamily: 'eurostile-black-italic-italic, sans-serif',
     fontSize: '1rem',
     fontWeight: 'bold',
-    margin: theme.spacing(0, 2.5),
+    letterSpacing: '0.1em',
+    // margin: theme.spacing(0, 2.5),
+    margin: '20px 20px',
     textDecoration: 'none',
     textTransform: 'uppercase',
     transition: theme.transitions.create(['border-bottom', 'color'], {
@@ -93,9 +117,9 @@ export default makeStyles((theme) => ({
   },
   root: {
     // backgroundColor: theme.palette.common.white,
-    backgroundColor: 'transparent',
+    // backgroundColor: 'white',
+    // opacity: 0.6,
     color: '#000',
     boxShadow: 'none',
-    top: 12,
   },
 }));

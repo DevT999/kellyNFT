@@ -1,0 +1,1 @@
+export const WALLET_CONNECTED = 'WALLET_CONNECTED'

@@ -29,7 +29,6 @@ module.exports = withTM({
       path: false,
       crypto: false,
     };
-
     return config;
   },
 });

@@ -150,7 +150,7 @@ export default function Home() {
               {new Date(mintStartDate).getTime() < Date.now() ? (
                 <>
                   {isSoldOut ? (
-                    <div className="border border-black rounded w-auto"><p className="m-2">&#9888; Sold out</p></div>
+                    <div className="border border-black rounded"><p className="m-2 text-center">&#9888; Sold out</p></div>
                   ) : (
                     <>
                       <div className="flex flex-col">
