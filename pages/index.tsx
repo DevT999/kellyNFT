@@ -311,7 +311,12 @@ function Home({...props}) {
                                     width={25}
                                   />
                                 ) : (
-                                  <div style={{fontFamily: 'eurostile-black-italic-italic, sans-serif'}}>MINT</div>
+                                  <div style={{
+                                    fontFamily: 'eurostile-black-italic-italic, sans-serif', 
+                                    letterSpacing: '0.25rem',
+                                    fontSize: '14px',
+                                    fontWeight: 600
+                                  }}>MINT</div>
                                 )}
                               </button>
                             )}
