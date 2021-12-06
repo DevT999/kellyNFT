@@ -78,7 +78,7 @@ export default function Home() {
           name="description"
           content="NFT Eggs, on solana"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/sol.png" />
       </Head>
 
       <div className="flex flex-col items-center min-h-screen mx-6">

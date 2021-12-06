@@ -185,7 +185,7 @@ function Home({...props}) {
         <Head>
           {/* <title>MetaEggs.city</title> */}
           <meta name="description" content="NFT Eggs, on solana" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/img/sol.png" />
           <link
             rel="stylesheet"
             type="text/css"
