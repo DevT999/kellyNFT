@@ -39,4 +39,11 @@ export default makeStyles((theme) => ({
   fullScreen: {
     minHeight: '100vh',
   },
+  playerWrapper: {
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%'
+  },
 }));

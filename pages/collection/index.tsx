@@ -12,6 +12,7 @@ import useWalletBalance from "../../hooks/useWalletBalance";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Layout from '../../components/Layout/layout';
 import { BasicView, DynamicCard, Loading, Title } from '../../components';
+import ReactPlayer from "react-player";
 import { Toaster } from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../../hooks/useWalletNFTs";
@@ -37,7 +38,7 @@ export default function Collection() {
     } = useCandyMachine();
   
     const [isLoading, nfts] = useWalletNfts();
-  
+    const [playing, setPlaying] = useState(false);
     const { connected } = useWallet();
   
     const [isMintLive, setIsMintLive] = useState(false);
@@ -46,6 +47,11 @@ export default function Collection() {
       console.log(newDirection);
     };
     console.log("===>", isLoading, nfts)
+
+    const handleOnReady = () => {
+      setTimeout(()=>setPlaying(true), 100)
+    }
+
     useEffect(() => {
       if (new Date(mintStartDate).getTime() < Date.now()) {
         setIsMintLive(true);
@@ -107,8 +113,21 @@ export default function Collection() {
           })}
         </NftGrid> */}
 
-        <div className="w-full px-48">
-          {isLoading&&<div className="flex items-center justify-center flex-1 h-screen"><ReactLoading type="bars" color="yellow" height={30} width={50}/></div>}
+        <div className="w-full px-48 h-full">
+          {isLoading&&
+            // <div className="flex items-center justify-center flex-1 h-screen"><ReactLoading type="bars" color="yellow" height={30} width={50}/></div>
+            <div className={classes.playerWrapper}>
+              <ReactPlayer
+                url={`/mp4/sol.mp4`}
+                volume={0}
+                onReady={handleOnReady}
+                playing={playing}
+                loop
+                width="150px"
+                height="150px"
+              />
+            </div>
+          }
           <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
             {(nfts as any).map((nft: any, i: number) => {
               return <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} />;

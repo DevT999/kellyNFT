@@ -9,6 +9,7 @@ export default makeStyles(() => ({
     // zIndex: 1,
     // minHeight: 'calc(100vh - 2px)',
     paddingTop: 84,
+    height: '100%'
   },
   particles: {
     height: '100%',
