@@ -22,15 +22,15 @@ const InfoBlock = styled.div`
   padding: 0 5px 5px;
 `
 
-export default function AnNFT({ key, index, selectedIndex, onClick, nft }) {
+export default function AnNFT({ index, selectedIndex, onClick, nft, setDetail }) {
   const [isOpen, setOpen] = useState(false)
   useEffect(() => {
-    console.log(key, nft);
+    console.log(nft);
   }, []);
 
   const handleClick = async () => {
-    onClick(index)
-    setOpen(!isOpen)
+    // onClick(index)
+    // setOpen(!isOpen)
   }
   return (
     <div className="col-lg-4 col-md-4 col-sm-12 p-8">
@@ -48,11 +48,11 @@ export default function AnNFT({ key, index, selectedIndex, onClick, nft }) {
             FATAL YOUTH
             </div>
             <div className="d-flex flex-row items-center">
-              <DetailsButton> 
-                GENISIS COLLECTION
-              </DetailsButton>
-              <div className="text-lg" style={{color: 'rgb(138, 135, 135)'}}>
-                <i className={["bi", isOpen?"bi-chevron-compact-up":"bi-chevron-compact-down"].join(" ")} onClick={handleClick}></i>  
+              <div className="detail-btn cursor-pointer" onClick={()=>setDetail(selectedIndex, nft.description)}> 
+                Detail{/* GENISIS COLLECTION */}
+              </div>
+              <div className="text-lg hidden" style={{color: 'rgb(138, 135, 135)'}}>
+                <i className={["bi", isOpen?"bi-chevron-compact-up":"bi-chevron-compact-down"].join(" ")} onClick={()=>setDetail(selectedIndex, nft.name, nft.image, nft.description)/*handleClick*/}></i>  
               </div>
             </div>
             {isOpen && index===selectedIndex && 

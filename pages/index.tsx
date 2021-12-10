@@ -120,6 +120,8 @@ function Home({...props}) {
 
   const [isLoading, nfts] = useWalletNfts();
 
+  const [leftTime, setLeftTime] = useState("")
+
   const { connected } = useWallet();
 //   const [connected, setConnected] = useState(props.wallet.connected);
 //  console.log("props.wallet.connected====>", props.wallet.connected)
@@ -134,6 +136,44 @@ function Home({...props}) {
     if (new Date(mintStartDate).getTime() < Date.now()) {
       setIsMintLive(true);
     }
+    
+    // time counter
+    const intervalId = setInterval(() => {
+
+      var today = Math.round((new Date()).getTime()/1000)
+      var diff = 1646499271 - today;
+
+      var daysDifference = Math.floor(diff/60/60/24);
+      diff -= daysDifference*60*60*24
+
+      var hoursDifference = Math.floor(diff/60/60);
+      diff -= hoursDifference*60*60
+
+      var minutesDifference = Math.floor(diff/60);
+      diff -= minutesDifference*60
+
+      var secondsDifference = Math.floor(diff);
+
+      //  Format Hours
+      var hourtext = '00';
+      if (hoursDifference > 0){ hourtext = String(hoursDifference);}
+      if (hourtext.length == 1){hourtext = '0' + hourtext};
+
+      //  Format Minutes
+      var mintext = '00';
+      if (minutesDifference > 0){ mintext = String(minutesDifference);}
+      if (mintext.length == 1) { mintext = '0' + mintext };
+
+      //  Format Seconds
+      var sectext = '00';
+      if (secondsDifference > 0) { sectext = String(secondsDifference); }
+      if (sectext.length == 1) { sectext = '0' + sectext };
+
+      var time = daysDifference + " : " + hourtext + " : " + mintext + " : " + sectext;
+      setLeftTime(time)
+    }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const MintMany = () => {
@@ -227,9 +267,14 @@ function Home({...props}) {
             </div>
           </div>
           
+          <div className="time-box">
+            <span className="text-lg text-gray-400">Time until NFT minting starts</span>
+            <span className="text-lg text-white tracking-widest" style={{ paddingTop: '10px', paddingBottom: '5px', fontWeight: 800 }}>{leftTime}</span>
+            <span className="text-lg text-gray-400 tracking-tighter">Days : Hours : Minutes : Seconds</span>
+          </div>            
 
           <div
-            className="h-full w-full flex justify-center px-16 mt-16 grid grid-cols-2 gap-4" style={{marginTop: '200px'}}
+            className="h-full w-full flex justify-center px-16 mt-8 grid grid-cols-2 gap-4"
           >
             <div className="w-50 justify-center items-center">
               <div className="eventInfo">
@@ -243,7 +288,7 @@ function Home({...props}) {
                   {/* <h2 className="text-center mt-16">{!connected&&<div className='blink'>&#128161; Connect your wallet.</div>}</h2>
                   <h4 className="my-4 text-lg font-extrabold text-center text-white p-4">A unique NFT experience from a collective of writers, game designers, filmmakers, and illustrators from a variety of disciplines who share a passion for unique, meaningful art and blockchain technology.</h4> */}
                   <div className="d-flex flex-row items-center w-100 pl-8">
-                    <h5 className="text-lg text-white text-left p-4 pt-8 tracking-widest">
+                    <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
                       Mint Cost :{" "}
                     </h5>
                     <div className="text-lg text-white tracking-widest">
@@ -251,7 +296,7 @@ function Home({...props}) {
                     </div>
                   </div>
                   <div className="d-flex flex-row items-center w-100 pl-8">
-                    <h5 className="text-lg text-white text-left p-4 tracking-widest">
+                    <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
                       Supply :{" "}
                     </h5>
                     <div className="text-lg text-gray-400 tracking-widest">
@@ -259,7 +304,7 @@ function Home({...props}) {
                     </div>
                   </div>
                   <div className="d-flex flex-row items-center w-100 pl-8">
-                    <h5 className="text-lg text-white text-left p-4 tracking-widest">
+                    <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
                       Sale :{" "}
                     </h5>
                     <div className="text-lg text-gray-400 tracking-widest">
@@ -355,7 +400,7 @@ function Home({...props}) {
               </div>
             </div>
            
-            <div className="w-50 justify-center items-center mt-4 ml-16 pl-32">
+            <div className="w-50 justify-center items-center ml-16 pl-32">
               <div className="container-carousel">
                 <div className="carousel-main">
                   <div className="carousel__face">
