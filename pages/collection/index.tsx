@@ -11,8 +11,11 @@ import useCandyMachine from "../../hooks/useCandyMachine";
 import useWalletBalance from "../../hooks/useWalletBalance";
 import { useWallet } from "@solana/wallet-adapter-react";
 import Layout from '../../components/Layout/layout';
+import DetailModal from '../../components/DetailModal';
 import { BasicView, DynamicCard, Loading, Title } from '../../components';
 import ReactPlayer from "react-player";
+import SweetAlert from "react-bootstrap-sweetalert";
+
 import { Toaster } from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../../hooks/useWalletNFTs";
@@ -21,6 +24,7 @@ import NftGrid from "../../components/NftGrid";
 import NftCard from "../../components/NftCard";
 import useStyles from './Collection.style';
 import { motion } from "framer-motion";
+
 
 const AMOUNT_PER_PAGE = 12;
 
@@ -39,6 +43,10 @@ export default function Collection() {
   
     const [isLoading, nfts] = useWalletNfts();
     const [playing, setPlaying] = useState(false);
+    const [showDetail, setShowDetail] = useState([]);
+    const [selectedName, setSelectedName] = useState("");
+    const [selectedImg, setSelectedImg] = useState("");
+    const [selectedDescription, setSelectedDescription] = useState("");
     const { connected } = useWallet();
   
     const [isMintLive, setIsMintLive] = useState(false);
@@ -51,6 +59,33 @@ export default function Collection() {
     const handleOnReady = () => {
       setTimeout(()=>setPlaying(true), 100)
     }
+
+    const hideAlert = (index) => {
+      const tmp_details = [...showDetail]
+      tmp_details[index] = false;
+      setShowDetail(tmp_details)
+    }
+
+    const setDetail = (index, name, img, description) => {
+      const tmp_details = [...showDetail]
+      tmp_details[index] = true;
+      setSelectedName(name)
+      setSelectedImg(img)
+      setSelectedDescription(description)
+      setShowDetail(tmp_details)
+    }
+
+    const onOk = () => {
+      const tmpDetails = [...showDetail];
+      tmpDetails[selectedIndex] = false;
+      setShowDetail(tmpDetails);
+    };
+  
+    const onClose = () => {
+      const tmpDetails = [...showDetail];
+      tmpDetails[selectedIndex] = false;
+      setShowDetail(tmpDetails);
+    };
 
     useEffect(() => {
       if (new Date(mintStartDate).getTime() < Date.now()) {
@@ -107,12 +142,19 @@ export default function Collection() {
           </div>
         </div>
 
+        {/* {(
+          <DetailModal
+            title='NFT'
+            img="../cards/1.jpg"
+            onOk={onOk}
+            onClose={onClose}
+          />
+        )} */}
         {/* <NftGrid>
           {(nfts as any).map((nft: any, i: number) => {
             return <NftCard key={i} nft={nft} />;
           })}
-        </NftGrid> */}
-
+        </NftGrid> */}    
         <div className="w-full px-48 h-full">
           {isLoading&&
             // <div className="flex items-center justify-center flex-1 h-screen"><ReactLoading type="bars" color="yellow" height={30} width={50}/></div>
@@ -130,7 +172,20 @@ export default function Collection() {
           }
           <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
             {(nfts as any).map((nft: any, i: number) => {
-              return <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} />;
+              console.log('nfts======>', nfts)
+              return (
+              <>
+                <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} setDetail={setDetail} />
+                {showDetail[selectedIndex] && (
+                  <DetailModal
+                    title={selectedName}
+                    img={selectedImg}
+                    onOk={onOk}
+                    onClose={onClose}
+                  />
+                )}
+              </>
+              )
             })}
           </div>
         </div>
