@@ -156,7 +156,7 @@ export default function Collection() {
           })}
         </NftGrid> */}    
         <div className="w-full px-48 h-full">
-          {isLoading&&
+          {isLoading ?
             // <div className="flex items-center justify-center flex-1 h-screen"><ReactLoading type="bars" color="yellow" height={30} width={50}/></div>
             <div className={classes.playerWrapper}>
               <ReactPlayer
@@ -169,25 +169,33 @@ export default function Collection() {
                 height="150px"
               />
             </div>
+          :
+            <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
+              {(nfts as any).length>0?
+              (nfts as any).map((nft: any, i: number) => {
+                console.log('nfts======>', nfts)
+                return (
+                <>
+                  <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} setDetail={setDetail} />
+                  {showDetail[selectedIndex] && (
+                    <DetailModal
+                      title={selectedName}
+                      img={selectedImg}
+                      onOk={onOk}
+                      onClose={onClose}
+                    />
+                  )}
+                </>
+                )
+              }):
+              <div className="nores-box-container">
+                <div className="nores-box">
+                  <span className="text-lg text-gray-400 tracking-widest">There is no nft collection.</span>
+                </div>
+              </div>   
+              }
+            </div>
           }
-          <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
-            {(nfts as any).map((nft: any, i: number) => {
-              console.log('nfts======>', nfts)
-              return (
-              <>
-                <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} setDetail={setDetail} />
-                {showDetail[selectedIndex] && (
-                  <DetailModal
-                    title={selectedName}
-                    img={selectedImg}
-                    onOk={onOk}
-                    onClose={onClose}
-                  />
-                )}
-              </>
-              )
-            })}
-          </div>
         </div>
       </Layout>
     );
