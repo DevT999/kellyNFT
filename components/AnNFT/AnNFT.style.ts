@@ -29,6 +29,15 @@ export default makeStyles((theme) => ({
   //   justifyContent: 'center',
   //   alignItems: 'center',
   // },
+  detailImg: {
+    width: '100%',
+    objectFit: 'fill',
+    aspectRatio: '4/6',
+    backgroundColor: 'rgb(24, 23, 23)',
+    borderColor: 'rgb(255,255,255)',
+    borderWidth: '5px',
+    padding: '5px',
+  },
   background: {
     width: '100%',
     objectFit: 'fill',

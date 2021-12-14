@@ -805,13 +805,21 @@
     font-family: 'eurostile-black-italic-italic', sans-serif !important; */
 }
 /* -----------  card css   --------- */
+.detail-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/5;
+    background-size: cover;
+  }
+.detail-gif {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/6.2;
+    background-size: cover;
+}
 .my-card {
-    background-color: rgb(24, 23, 23);
-    border-color: rgb(255,255,255);
-    border-width: 5px;
     width: 100%;
     height: auto !important;
-    padding: 5px;
 }
 .my-card-header {
     padding: 5px 10px 0px 5px;

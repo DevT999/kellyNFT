@@ -177,6 +177,7 @@ export default function Collection() {
                     selectedIndex={selectedIndex} 
                     nft={null} 
                     setDetail={setDetail} 
+                    width="100%"
                     cardOnly />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
@@ -186,6 +187,7 @@ export default function Collection() {
                     selectedIndex={selectedIndex} 
                     nft={null} 
                     setDetail={setDetail} 
+                    width="100%"
                     cardOnly />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
@@ -195,6 +197,7 @@ export default function Collection() {
                     selectedIndex={selectedIndex} 
                     nft={null} 
                     setDetail={setDetail} 
+                    width="100%"
                     cardOnly />
                 </Grid>
               </Grid>
@@ -204,8 +207,10 @@ export default function Collection() {
               {(nfts as any).length>0?
               <Grid container>
               {(nfts as any).map((nft: any, i: number) => {
+                
+                return (
                 <Grid key={i} item xs={12} sm={6} md={4} lg={4}>
-                  <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} setDetail={setDetail} cardOnly={false}/>
+                  <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} setDetail={setDetail} width="100%" cardOnly={false}/>
                   {showDetail[selectedIndex] && (
                     <DetailModal
                       title={selectedName}
@@ -214,7 +219,7 @@ export default function Collection() {
                       onClose={onClose}
                     />
                   )}
-                </Grid>
+                </Grid>)
               })}
               </Grid>
               :

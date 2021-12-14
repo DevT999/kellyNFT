@@ -7,30 +7,31 @@ import styled from 'styled-components'
 
 import useStyles from './AnNFT.style';
 
-export default function AnNFT({ index, selectedIndex, onClick, nft, setDetail, cardOnly }) {
+export default function AnNFT({ index, selectedIndex, onClick, nft, setDetail, cardOnly, width }) {
   const [isOpen, setOpen] = useState(false)
-  // const classes = useStyles({ width });
-  const classes = useStyles();
+  const classes = useStyles({ width });
+  // const classes = useStyles();
 
   useEffect(() => {
-    console.log(nft);
+    console.log('nft---->', nft);
   }, []);
 
   const cardDisplay = (
-    <Paper className={classes.root}>
-      <div className="my-card">
-        <video autoPlay muted loop playsInline className={classes.background}>
-          <source src={`../mp4/sol.mp4`} type="video/mp4" />
-        </video>
-        <div className="d-flex flex-column" style={{height: '90px', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+    <Paper className={classes.detailImg}>
+      {/* <div className={"my-card"}> */}
+        <img src={`../mp4/placeholder.gif`} className="detail-gif"/>
+        {/* <video autoPlay muted loop playsInline className={classes.background}>
+          <source src={`../mp4/placeholder.gif`} type="video/gif" />
+        </video> */}
+        {/* <div className="d-flex flex-column" style={{height: '90px', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
           <ReactLoading
             type="bars"
             color="grey"
             height={20}
             width={25}
           />
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </Paper>
   );
   return (
@@ -38,10 +39,10 @@ export default function AnNFT({ index, selectedIndex, onClick, nft, setDetail, c
       {cardOnly ? (
         cardDisplay
       ) : (
-      <Paper className={classes.root}>
+      <Paper className={classes.detailImg}>
         <div className="my-card">
           <div className="p-0">
-            <img src={nft.image} className="w-full" alt={nft.name} style={{height: '300px', resizeMode: 'cover'}}/>
+            <img src={nft.image} className="detail-img" alt={nft.name}/>
           </div>
           <div className="">
             <div className="my-card-header">
