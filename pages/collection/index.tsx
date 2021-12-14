@@ -157,26 +157,55 @@ export default function Collection() {
         </NftGrid> */}    
         <div className="w-full px-48 h-full">
           {isLoading ?
-            // <div className="flex items-center justify-center flex-1 h-screen"><ReactLoading type="bars" color="yellow" height={30} width={50}/></div>
-            <div className={classes.playerWrapper}>
-              <ReactPlayer
-                url={`/mp4/sol.mp4`}
-                volume={0}
-                onReady={handleOnReady}
-                playing={playing}
-                loop
-                width="150px"
-                height="150px"
-              />
+            // <div className={classes.playerWrapper}>
+            //   <ReactPlayer
+            //     url={`/mp4/sol.mp4`}
+            //     volume={0}
+            //     onReady={handleOnReady}
+            //     playing={playing}
+            //     loop
+            //     width="150px"
+            //     height="150px"
+            //   />
+            // </div>
+            <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
+              <Grid container>
+                <Grid item xs={12} sm={6} md={4} lg={4}>
+                  <AnNFT 
+                    index={0} 
+                    onClick={(e:number)=>{setSelectedIndex(e)}} 
+                    selectedIndex={selectedIndex} 
+                    nft={null} 
+                    setDetail={setDetail} 
+                    cardOnly />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={4}>
+                  <AnNFT 
+                    index={1} 
+                    onClick={(e:number)=>{setSelectedIndex(e)}} 
+                    selectedIndex={selectedIndex} 
+                    nft={null} 
+                    setDetail={setDetail} 
+                    cardOnly />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} lg={4}>
+                  <AnNFT 
+                    index={2} 
+                    onClick={(e:number)=>{setSelectedIndex(e)}} 
+                    selectedIndex={selectedIndex} 
+                    nft={null} 
+                    setDetail={setDetail} 
+                    cardOnly />
+                </Grid>
+              </Grid>
             </div>
           :
             <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
               {(nfts as any).length>0?
-              (nfts as any).map((nft: any, i: number) => {
-                console.log('nfts======>', nfts)
-                return (
-                <>
-                  <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} setDetail={setDetail} />
+              <Grid container>
+              {(nfts as any).map((nft: any, i: number) => {
+                <Grid key={i} item xs={12} sm={6} md={4} lg={4}>
+                  <AnNFT key={i} index={i} onClick={(e:number)=>{setSelectedIndex(e)}} selectedIndex={selectedIndex} nft={nft} setDetail={setDetail} cardOnly={false}/>
                   {showDetail[selectedIndex] && (
                     <DetailModal
                       title={selectedName}
@@ -185,9 +214,10 @@ export default function Collection() {
                       onClose={onClose}
                     />
                   )}
-                </>
-                )
-              }):
+                </Grid>
+              })}
+              </Grid>
+              :
               <div className="nores-box-container">
                 <div className="nores-box">
                   <span className="text-lg text-gray-400 tracking-widest">There is no nft collection.</span>

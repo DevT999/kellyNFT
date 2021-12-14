@@ -1,9 +1,9 @@
 {
-    "name": "Cat 1",
+    "name": "Cat 3",
     "symbol": "CAT",
-    "description": "Celebratory Solflare NFT Cat 1 for the Solflare X launch",
+    "description": "Celebratory Solflare NFT Cat 3 for the Solflare X launch",
     "seller_fee_basis_points": 10,
-    "image": "1.png",
+    "image": "3.png",
     "attributes": [
       {
         "trait_type": "cat",
@@ -25,7 +25,7 @@
     "properties": {
       "files": [
         {
-          "uri": "1.png",
+          "uri": "3.png",
           "type": "image/png"
         }
       ],
