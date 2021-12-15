@@ -135,13 +135,15 @@ function Home({...props}) {
     // props.setConnected();
     if (new Date(mintStartDate).getTime() < Date.now()) {
       setIsMintLive(true);
+    } else {
+      setIsMintLive(false);
     }
     
     // time counter
     const intervalId = setInterval(() => {
 
       var today = Math.round((new Date()).getTime()/1000)
-      var diff = 1646499271 - today;
+      var diff = parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10) - today;
 
       var daysDifference = Math.floor(diff/60/60/24);
       diff -= daysDifference*60*60*24
@@ -228,7 +230,7 @@ function Home({...props}) {
         <div className="flex flex-col items-center mx-6">
           <Toaster />
           
-          <div className="time-box">
+          <div className="time-box" style={{display: isMintLive?'none':'flex'}}>
             <span className="text-lg text-gray-400">Time until NFT minting starts</span>
             <span className="text-lg text-white tracking-widest" style={{ paddingTop: '10px', paddingBottom: '5px', fontWeight: 800 }}>{leftTime}</span>
             <span className="text-lg text-gray-400 tracking-tighter">Days : Hours : Minutes : Seconds</span>
@@ -236,6 +238,7 @@ function Home({...props}) {
 
           <div
             className="h-full w-full flex justify-center px-16 mt-8 grid grid-cols-2 gap-4"
+            style={{ marginTop: isMintLive?"180px":"50px", padding: "0 100px" }}
           >
             <div className="w-50 justify-center items-center">
               <div className="eventInfo">

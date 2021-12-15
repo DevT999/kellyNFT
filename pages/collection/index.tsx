@@ -203,7 +203,7 @@ export default function Collection() {
               </Grid>
             </div>
           :
-            <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
+            <div className="d-flex mt-24 flex-column col-lg-12 col-md-12 col-sm-12">
               {(nfts as any).length>0?
               <Grid container>
               {(nfts as any).map((nft: any, i: number) => {
