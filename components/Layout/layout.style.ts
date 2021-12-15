@@ -9,7 +9,11 @@ export default makeStyles(() => ({
     // zIndex: 1,
     // minHeight: 'calc(100vh - 2px)',
     paddingTop: 84,
-    height: '100%'
+    display: "flex",
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   particles: {
     height: '100%',

@@ -209,7 +209,7 @@ function Home({...props}) {
 
   return (
     <Layout>
-      <body className="gradient leading-relaxed tracking-wide flex flex-col bg-transparent">
+      <body className="w-100 leading-relaxed tracking-wide flex flex-col bg-transparent">
         <Head>
           {/* <title>MetaEggs.city</title> */}
           <meta name="description" content="NFT Eggs, on solana" />
@@ -237,12 +237,12 @@ function Home({...props}) {
           </div>            
 
           <div
-            className="h-full w-full flex justify-center px-16 mt-8 grid grid-cols-2 gap-4"
+            className="h-100 w-100 flex flex-row justify-center"
             style={{ marginTop: isMintLive?"180px":"50px", padding: "0 100px" }}
           >
             <div className="w-50 justify-center items-center">
               <div className="eventInfo">
-                <div className="mint-box flex flex-column">
+                <div className="mint-box flex flex-col">
                   {/* {connected && (
                   <p className="mr-auto text-sm">
                     <span className="font-bold">Available / Minted / Total:</span>{" "}
@@ -251,7 +251,7 @@ function Home({...props}) {
                   )} */}
                   {/* <h2 className="text-center mt-16">{!connected&&<div className='blink'>&#128161; Connect your wallet.</div>}</h2>
                   <h4 className="my-4 text-lg font-extrabold text-center text-white p-4">A unique NFT experience from a collective of writers, game designers, filmmakers, and illustrators from a variety of disciplines who share a passion for unique, meaningful art and blockchain technology.</h4> */}
-                  <div className="d-flex flex-row items-center w-100 pl-8">
+                  <div className="flex flex-row items-center w-100 pl-8">
                     <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
                       Mint Cost :{" "}
                     </h5>
@@ -259,7 +259,7 @@ function Home({...props}) {
                       3 SOL
                     </div>
                   </div>
-                  <div className="d-flex flex-row items-center w-100 pl-8">
+                  <div className="flex flex-row items-center w-100 pl-8">
                     <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
                       Supply :{" "}
                     </h5>
@@ -267,7 +267,7 @@ function Home({...props}) {
                       {nftsData.itemsRemaining} / {nftsData.itemsAvailable}
                     </div>
                   </div>
-                  <div className="d-flex flex-row items-center w-100 pl-8">
+                  <div className="flex flex-row items-center w-100 pl-8">
                     <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
                       Sale :{" "}
                     </h5>
@@ -364,7 +364,7 @@ function Home({...props}) {
               </div>
             </div>
            
-            <div className="w-50 justify-center items-center ml-16 pl-32">
+            <div className="w-50 justify-center items-center">
               <div className="container-carousel">
                 <div className="carousel-main">
                   <div className="carousel__face">

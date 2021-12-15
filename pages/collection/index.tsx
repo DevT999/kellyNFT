@@ -155,7 +155,7 @@ export default function Collection() {
             return <NftCard key={i} nft={nft} />;
           })}
         </NftGrid> */}    
-        <div className="w-full px-48 h-full">
+        <div className="d-flex w-75 flex-column justify-content-center items-content-center">
           {isLoading ?
             // <div className={classes.playerWrapper}>
             //   <ReactPlayer
@@ -168,7 +168,7 @@ export default function Collection() {
             //     height="150px"
             //   />
             // </div>
-            <div className="flex mt-24 flex-row col-lg-12 col-md-12 col-sm-12">
+            <div className="d-flex mt-24 flex-column col-lg-12 col-md-12 col-sm-12">
               <Grid container>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                   <AnNFT 
