@@ -20,7 +20,7 @@
 1. Clone the project
 
 ```
-git clone https://github.com/metaeggs/MetaEggsCity.git
+git clone https://github.com/DevT999/kellyNFT.git
 ```
 
 2. Install yarn dependencies
