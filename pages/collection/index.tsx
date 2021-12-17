@@ -156,7 +156,7 @@ export default function Collection() {
           })}
         </NftGrid> */}    
         <div className="d-flex w-75 flex-column justify-content-center align-items-center" style={{ padding: "30px" }}>
-          {!isLoading ?
+          {isLoading ?
             // <div className={classes.playerWrapper}>
             //   <ReactPlayer
             //     url={`/mp4/sol.mp4`}
@@ -168,7 +168,7 @@ export default function Collection() {
             //     height="150px"
             //   />
             // </div>
-            <div className="d-flex mt-24 flex-column col-lg-12 col-md-12 col-sm-12">
+            <div className="d-flex mt-24 flex-column items-center col-lg-12 col-md-12 col-sm-12">
               <Grid container>
                 <Grid item xs={12} sm={6} md={4} lg={4}>
                   <AnNFT 
@@ -203,7 +203,7 @@ export default function Collection() {
               </Grid>
             </div>
           :
-            <div className="d-flex mt-24 flex-column col-lg-12 col-md-12 col-sm-12">
+            <div className="d-flex mt-24 flex-column items-center col-lg-12 col-md-12 col-sm-12">
               {(nfts as any).length>0?
               <Grid container>
               {(nfts as any).map((nft: any, i: number) => {
