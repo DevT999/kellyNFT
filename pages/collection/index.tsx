@@ -155,8 +155,8 @@ export default function Collection() {
             return <NftCard key={i} nft={nft} />;
           })}
         </NftGrid> */}    
-        <div className="d-flex w-75 flex-column justify-content-center items-content-center">
-          {isLoading ?
+        <div className="d-flex w-75 flex-column justify-content-center align-items-center" style={{ padding: "30px" }}>
+          {!isLoading ?
             // <div className={classes.playerWrapper}>
             //   <ReactPlayer
             //     url={`/mp4/sol.mp4`}

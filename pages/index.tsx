@@ -272,7 +272,7 @@ function Home({...props}) {
                       Sale :{" "}
                     </h5>
                     <div className="text-lg text-gray-400 tracking-widest">
-                      Whitelist / Private / Public
+                      Whitelist / Public
                     </div>
                   </div>
                   <div className="flex items-start justify-center my-10">
@@ -298,7 +298,7 @@ function Home({...props}) {
                               </div>
                             ) : (
                               <button
-                                onClick={startMint}
+                                onClick={()=>{}}
                                 disabled={isMinting || !connected}
                                 style={{
                                   width: "250px",
@@ -306,7 +306,7 @@ function Home({...props}) {
                                   border: "3px solid rgb(190, 24, 93)",
                                 }}
                                 className={[
-                                  "tracking-widest flex items-center justify-center z-10 mx-auto font-bold bg-pink-50 text-pink-700 rounded-2xl",
+                                  "mint-button tracking-widest flex items-center justify-center z-10 mx-auto font-bold bg-pink-50 text-pink-700 rounded-2xl",
                                   isMinting || !connected
                                     ? "cursor-not-allowed"
                                     : "cursor-allowed hover:opacity-70",

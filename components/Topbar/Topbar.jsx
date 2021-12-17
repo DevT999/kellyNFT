@@ -118,10 +118,10 @@ export default function Topbar() {
                 >
                   <div className='flex flex-row items-center'>
                     <img src='img/sol.png'></img>
-                    <div className='pl-4 logo-title tracking-widest'>FATAL YOUTH</div>
+                    <div className='pl-2 logo-title tracking-wider'>FATEFUL YOUTH</div>
                   </div>
                   <div className='flex flex-row items-center'>
-                    <div style={{width: '68px'}}></div>
+                    <div style={{width: '72px'}}></div>
                     <div className='logo-sub-title bg-black px-2 mb-2'>SOLANA COLLECTION</div>
                   </div>
                 </Typography>
