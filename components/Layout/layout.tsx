@@ -26,10 +26,10 @@ export default function Layout({ children }: LayoutProps): ReactElement {
   return (
     <>
       <Head>
-        {/* <title>MetaEggs.city</title> */}
+        <title>Fateful Youth</title>
         <meta
           name="description"
-          content="NFTs"
+          content="This is Fateful Youth NFT dapp for SOL."
         />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"></link>
         <link href="https://www.dafontfree.net/embed/ZXVyb3N0aWxlLWJsYWNrLWl0YWxpYy1pdGFsaWMmZGF0YS8yNC9lLzEyMzg0Ni9FVVJPU0JJSS50dGY" rel="stylesheet" type="text/css"/>

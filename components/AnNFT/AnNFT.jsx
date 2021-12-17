@@ -2,6 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import { Box, Button, Grid, Paper, Typography } from "@material-ui/core";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import ReactLoading from "react-loading";
 import styled from 'styled-components'
 
@@ -51,7 +53,7 @@ export default function AnNFT({ index, selectedIndex, onClick, nft, setDetail, c
             </div>
             <div className="my-card-footer">
               <div className="footer-title">
-              FATAL YOUTH
+              FATEFUL YOUTH
               </div>
               <div className="d-flex flex-row items-center">
                 <div className="detail-btn cursor-pointer" onClick={()=>setDetail(selectedIndex, nft.description)}> 
