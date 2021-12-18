@@ -9,7 +9,7 @@ require("@solana/wallet-adapter-react-ui/styles.css");
 import 'bootstrap-icons/font/bootstrap-icons.json';
 import "../styles/mystyle.css"
 import { Provider } from 'react-redux'
-import Store from './redux/store'
+import Store from '../redux/store'
 
 const WalletConnectionProvider = dynamic(
   () => import("../components/WalletConnection/WalletConnectionProvider"),

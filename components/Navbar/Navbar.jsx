@@ -34,11 +34,11 @@ export default function Navbar() {
             <a className={clsx(classes.navLink)} style={{color: router.pathname=='/'?'white':'rgb(174, 159, 169)'}}>PURCHASE</a>
           </Link>
         </li>
-        <li className={["nav-item", clsx(classes.link)].join(" ")} style={{backgroundColor: router.pathname=='/collection'?'rgb(75, 20, 77)':'rgb(140, 94, 124)'}}>
+        {/* <li className={["nav-item", clsx(classes.link)].join(" ")} style={{backgroundColor: router.pathname=='/collection'?'rgb(75, 20, 77)':'rgb(140, 94, 124)'}}>
           <Link href="/collection" >
             <a className={clsx(classes.navLink)} style={{color: router.pathname=='/collection'?'white':'rgb(174, 159, 169)'}}>COLLECTION</a>
           </Link>
-        </li>
+        </li> */}
       </ul>
   )
 }

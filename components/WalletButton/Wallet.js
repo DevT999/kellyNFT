@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as walletAction from '../../pages/redux/actions/Wallet';
+import * as walletAction from '../../redux/actions/Wallet';
 
 const Wallet = (props) => {
   // use the useContext for get the all state value from App.js Component

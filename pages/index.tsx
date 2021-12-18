@@ -23,7 +23,7 @@ import ReactTooltip from "react-tooltip";
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as walletAction from './redux/actions/Wallet';
+import * as walletAction from '../redux/actions/Wallet';
 
 import {
   Box,
