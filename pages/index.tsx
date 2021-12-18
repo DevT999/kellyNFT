@@ -298,7 +298,7 @@ function Home({...props}) {
                               </div>
                             ) : (
                               <button
-                                onClick={()=>{}}
+                                onClick={startMint}
                                 disabled={isMinting || !connected}
                                 style={{
                                   width: "250px",
