@@ -227,9 +227,9 @@ export default function Home() {
         <div className="flex flex-col w-full">
           <h2 className="text-2xl font-bold text-black">My Eggs</h2>
           <div className="flex mt-3 gap-x-2">
-            {(nfts as any).map((nft: any, i: number) => {
+            {/* {(nfts as any).map((nft: any, i: number) => {
               return <AnNFT key={i} nft={nft} />;
-            })}
+            })} */}
           </div>
         </div>
       </div>

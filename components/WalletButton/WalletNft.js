@@ -124,9 +124,9 @@ const WalletNft = () => {
                       </h4>
                     ) : (
                       <>
-                        {WalletNft.nft.map((val) => {
+                        {WalletNft.nft.map((val, index) => {
                           return (
-                            <div className="col-4 mt-5">
+                            <div key={index} className="col-4 mt-5">
                               <div className="nft_cart">
                                 <div className="nft_img pt-4">
                                   <img src={val.image} alt="Loading..." />
