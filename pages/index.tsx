@@ -357,7 +357,13 @@ function Home({...props}) {
                   </div>
                   <div className="pb-6 pr-4 w-full">
                     <div className="text-sm text-white text-right tracking-widest">
-                      <Link href="/">BACK TO HOMEPAGE</Link>
+                      <a
+                        href="https://fatefulyouth.com"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        BACK TO HOMEPAGE
+                      </a>
                     </div>
                   </div>
                 </div>

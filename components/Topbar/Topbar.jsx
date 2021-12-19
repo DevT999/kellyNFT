@@ -146,7 +146,7 @@ export default function Topbar() {
                 <ul className="navbar-nav mr-auto w-100 flex justify-center flex-row py-2">
                   <li className="nav-item pl-2 pr-2">
                     <a
-                      href="https://discord.com/"
+                      href="https://discord.gg/kspUghEFad"
                       target="_blank"
                       rel="noreferrer"
                       className='tracking-widest'
@@ -157,7 +157,7 @@ export default function Topbar() {
                   </li>
                   <li className="nav-item pl-4">
                     <a
-                      href="https://twitter.com/ArtBasel"
+                      href="https://twitter.com/fatefulyouth_"
                       target="_blank"
                       rel="noreferrer"
                       className='tracking-widest'
