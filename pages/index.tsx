@@ -272,7 +272,7 @@ function Home({...props}) {
                       Sale :{" "}
                     </h5>
                     <div className="text-lg text-gray-400 tracking-widest">
-                      Whitelist / Public
+                      Public
                     </div>
                   </div>
                   <div className="flex items-start justify-center my-10">
