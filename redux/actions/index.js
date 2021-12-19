@@ -1,6 +1,6 @@
 
-import {WalletAction} from './Wallet'
+import Wallet from './Wallet'
 
-export {
-    WalletAction
+export default {
+    ...Wallet
 }

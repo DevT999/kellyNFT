@@ -20,10 +20,15 @@ import clsx from 'classnames';
 import useStyles from './Topbar.style.ts';
 // import { WalletMultiButton } from '../wallet-adapter-react-ui';
 import Wallet from "../WalletButton/Wallet";
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as walletAction from '../../redux/actions/Wallet';
+
 //  crate a createContext for passing state data in every component
 export const checkWalletDetails = createContext();
 
-export default function Topbar() {
+function Topbar({...props}) {
   const classes = useStyles();
   const theme = useTheme();
   const { connected } = useWallet();
@@ -43,12 +48,13 @@ export default function Topbar() {
   const checkIfWalletIsConnected = async () => {
     try {
       const { solana } = window;
-
+      
       if (solana) {
         if (solana.isPhantom) {
           setIsSolana(solana);
           const response = await solana.connect({ onlyIfTrusted: true });
-
+          console.log("response.publicKey.toString()====>", response.publicKey.toString())
+          props.walletAction.setKey(response.publicKey.toString());
           // set values in state
           setWalletAddress({
             ...walletAddress,
@@ -176,3 +182,10 @@ export default function Topbar() {
   </Nav>
   )
 }
+
+const mapStateToProps = ({wallet})=>({wallet})
+const mapDispatchToProps = (dispatch) => ({
+  walletAction: bindActionCreators({...walletAction}, dispatch),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Topbar);
