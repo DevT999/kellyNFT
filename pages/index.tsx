@@ -138,7 +138,7 @@ function Home({...props}) {
     } else {
       setIsMintLive(false);
     }
-    
+    console.log("purchase====>", connected, isMinting)
     // time counter
     const intervalId = setInterval(() => {
       if (connected) {

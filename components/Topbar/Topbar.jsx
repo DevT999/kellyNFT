@@ -37,6 +37,7 @@ function Topbar({...props}) {
   const shouldShrink = useMediaQuery(theme.breakpoints.down('lg'));
 
   const [isSolana, setIsSolana] = useState();
+  const [pubKey, setPubKey] = useState('');
   const [walletAddress, setWalletAddress] = useState({
     publicKey: "",
     loading: true,
@@ -53,7 +54,8 @@ function Topbar({...props}) {
         if (solana.isPhantom) {
           setIsSolana(solana);
           const response = await solana.connect({ onlyIfTrusted: true });
-          console.log("response.publicKey.toString()====>", response.publicKey.toString())
+          setPubKey(response.publicKey.toString());
+
           props.walletAction.setKey(response.publicKey.toString());
           // set values in state
           setWalletAddress({
@@ -76,10 +78,13 @@ function Topbar({...props}) {
   };
 
   var walletButton = document.querySelector("#__next > div > header > div > div > ul > li > button")
+  
     if (walletButton) {
       walletButton.innerHTML = 'CONNECT WALLET'
       walletButton.style.backgroundColor = 'rgb(208, 20, 138)'
       walletButton.style.border = '0.2rem solid black'
+    } else {
+      
     }
   var walletButtonAfter = document.querySelector("#__next > div > header > div > div > ul > li > div > button") 
   if (walletButtonAfter) {
@@ -102,12 +107,20 @@ function Topbar({...props}) {
     // }
 
     // calling checkIfWalletIsConnected() function for checking solana in window or not
+    
     const onLoad = async () => {
+      console.log("=====>", walletButton, pubKey, connected)
+      if (!walletButton&&pubKey.length==0) {
+        // window.location.reload();
+      }
       await checkIfWalletIsConnected();
     };
 
     window.addEventListener("load", onLoad);
     return () => window.removeEventListener("load", onLoad);
+    // return () => {
+    //   window.location.reload(true);
+    // };
   }, []);
 
   return (
