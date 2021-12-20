@@ -79,13 +79,12 @@ function Topbar({...props}) {
 
   var walletButton = document.querySelector("#__next > div > header > div > div > ul > li > button")
   
-    if (walletButton) {
-      walletButton.innerHTML = 'CONNECT WALLET'
-      walletButton.style.backgroundColor = 'rgb(208, 20, 138)'
-      walletButton.style.border = '0.2rem solid black'
-    } else {
-      
-    }
+  if (walletButton) {
+    walletButton.innerHTML = 'CONNECT WALLET'
+    walletButton.style.backgroundColor = 'rgb(208, 20, 138)'
+    walletButton.style.border = '0.2rem solid black'
+  } 
+
   var walletButtonAfter = document.querySelector("#__next > div > header > div > div > ul > li > div > button") 
   if (walletButtonAfter) {
     walletButtonAfter.style.backgroundColor = 'rgb(208, 20, 138)'
