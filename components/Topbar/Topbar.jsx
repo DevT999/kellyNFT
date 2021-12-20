@@ -58,6 +58,8 @@ function Topbar({...props}) {
 
           props.walletAction.setKey(response.publicKey.toString());
           // set values in state
+          
+          
           setWalletAddress({
             ...walletAddress,
             publicKey: response.publicKey.toString(),
