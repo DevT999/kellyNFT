@@ -119,7 +119,7 @@ export default function useCandyMachine() {
                     false
                 );
 
-                if (!status['err']) {
+                if (!status?.err) {
                     toast.success(
                         "Congratulations! Mint succeeded! Check your wallet :)"
                     );
