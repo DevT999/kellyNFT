@@ -141,7 +141,9 @@ function Home({...props}) {
     
     // time counter
     const intervalId = setInterval(() => {
-
+      if (connected) {
+        // console.log("getKey====>", props.wallet.key)
+      }
       var today = Math.round((new Date()).getTime()/1000)
       var diff = parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10) - today;
 

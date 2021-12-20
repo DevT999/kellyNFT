@@ -1,8 +1,6 @@
 import { combineReducers } from "redux"
-import {
-	walletReducer
-} from './Wallet'
+import wallet from './Wallet'
 
 export default combineReducers({
-	wallet: walletReducer,
+	wallet,
 })
