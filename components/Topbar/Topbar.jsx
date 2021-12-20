@@ -54,8 +54,10 @@ function Topbar({...props}) {
           setIsSolana(solana);
           const response = await solana.connect({ onlyIfTrusted: true });
           console.log("response.publicKey.toString()====>", response.publicKey.toString())
-          props.walletAction.setKey(response.publicKey.toString());
+          // props.walletAction.setKey(response.publicKey.toString());
           // set values in state
+          
+          
           setWalletAddress({
             ...walletAddress,
             publicKey: response.publicKey.toString(),
