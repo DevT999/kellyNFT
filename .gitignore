@@ -35,3 +35,4 @@ yarn-error.log*
 _static
 /.cache/
 assets
+_static.zip
