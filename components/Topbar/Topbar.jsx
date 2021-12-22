@@ -98,23 +98,15 @@ function Topbar({...props}) {
   }
 
   useEffect(() => {
-    // var walletButton = document.getElementsByClassName("wallet_button")
-    // walletButton.innerText = 'CONNECT WALLET'
-    // walletButton.innerHTML = 'CONNECT WALLET'
-    // var walletButton = document.querySelector("#__next > div:nth-child(2) > header > div > div > ul > li > button")
-    // if (walletButton) {
-    //   walletButton.innerHTML = 'CONNECT WALLET'
-    //   walletButton.style.backgroundColor = 'rgb(208, 20, 138)'
-    // }
 
     // calling checkIfWalletIsConnected() function for checking solana in window or not
     
     const onLoad = async () => {
-      console.log("=====>", walletButton, pubKey, connected)
-      if (!walletButton&&pubKey.length==0) {
-        // window.location.reload();
-      }
-      await checkIfWalletIsConnected();
+      // console.log("=====>", walletButton, pubKey, connected)
+      // if (!walletButton&&pubKey.length==0) {
+      //   // window.location.reload();
+      // }
+      // await checkIfWalletIsConnected();
     };
 
     window.addEventListener("load", onLoad);

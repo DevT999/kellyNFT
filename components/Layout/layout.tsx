@@ -31,9 +31,7 @@ export default function Layout({ children }: LayoutProps): ReactElement {
           name="description"
           content="This is Fateful Youth NFT dapp for SOL."
         />
-        {/* <meta http-equiv='cache-control' content='no-cache'/>
-        <meta http-equiv='expires' content='0'/>
-        <meta http-equiv='pragma' content='no-cache'/> */}
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"></link>
         <link href="https://www.dafontfree.net/embed/ZXVyb3N0aWxlLWJsYWNrLWl0YWxpYy1pdGFsaWMmZGF0YS8yNC9lLzEyMzg0Ni9FVVJPU0JJSS50dGY" rel="stylesheet" type="text/css"/>
         <link rel="icon" href="/img/sol.png" />
