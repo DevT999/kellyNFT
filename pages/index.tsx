@@ -118,6 +118,8 @@ function Home({...props}) {
     nftsData,
   } = useCandyMachine();
 
+  const windowResize = window.innerWidth;
+
   const [isLoading, nfts] = useWalletNfts();
 
   const [leftTime, setLeftTime] = useState("")
@@ -229,7 +231,7 @@ function Home({...props}) {
           />
         </Head>
 
-        <div className="flex flex-col items-center mx-6">
+        <div className="flex flex-col items-center main-container">
           <Toaster />
           
           <div className="time-box" style={{display: isMintLive?'none':'flex'}}>
@@ -239,166 +241,158 @@ function Home({...props}) {
           </div>            
 
           <div
-            className="h-100 w-100 flex flex-row justify-center"
-            style={{ marginTop: isMintLive?"180px":"50px", padding: "0 100px" }}
+            className="h-100 w-100 flex flex-row justify-center main-body"
+            style={{ marginTop: isMintLive?"210px":"20px" }}
           >
-            <div className="w-50 justify-center items-center">
-              <div className="eventInfo">
-                <div className="mint-box flex flex-col">
-                  {/* {connected && (
-                  <p className="mr-auto text-sm">
-                    <span className="font-bold">Available / Minted / Total:</span>{" "}
-                    {nftsData.itemsRemaining} / {nftsData.itemsRedeemed} / {nftsData.itemsAvailable}
-                  </p>
-                  )} */}
-                  {/* <h2 className="text-center mt-16">{!connected&&<div className='blink'>&#128161; Connect your wallet.</div>}</h2>
-                  <h4 className="my-4 text-lg font-extrabold text-center text-white p-4">A unique NFT experience from a collective of writers, game designers, filmmakers, and illustrators from a variety of disciplines who share a passion for unique, meaningful art and blockchain technology.</h4> */}
-                  <div className="flex flex-row items-center w-100 pl-8">
-                    <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
-                      Mint Cost :{" "}
-                    </h5>
-                    <div className="text-lg text-white tracking-widest">
-                      3 SOL
+            <Grid container>
+              <Grid item lg={6} md={6} xs={12} className="justify-center items-center">
+                <div className="eventInfo">
+                  <div className="mint-box flex flex-col">
+                    <div className="flex flex-row items-center w-100 pl-8">
+                      <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
+                        Mint Cost :{" "}
+                      </h5>
+                      <div className="text-lg text-white tracking-widest">
+                        3 SOL
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-row items-center w-100 pl-8">
-                    <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
-                      Supply :{" "}
-                    </h5>
-                    <div className="text-lg text-gray-400 tracking-widest">
-                      {nftsData.itemsRemaining} / {nftsData.itemsAvailable}
+                    <div className="flex flex-row items-center w-100 pl-8">
+                      <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
+                        Supply :{" "}
+                      </h5>
+                      <div className="text-lg text-gray-400 tracking-widest">
+                        {nftsData.itemsRemaining} / {nftsData.itemsAvailable}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-row items-center w-100 pl-8">
-                    <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
-                      Sale :{" "}
-                    </h5>
-                    <div className="text-lg text-gray-400 tracking-widest">
-                      Public
+                    <div className="flex flex-row items-center w-100 pl-8">
+                      <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
+                        Sale :{" "}
+                      </h5>
+                      <div className="text-lg text-gray-400 tracking-widest">
+                        Public
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start justify-center my-10">
-                    <>
-                      {new Date(mintStartDate).getTime() < Date.now() ? (
-                        <>
-                          <div className="flex flex-col pr-4">
-                            <ReactTooltip
-                              id="mint-info"
-                              type="dark"
-                              effect="solid"
-                              place="bottom"
-                              className="tooltip"
-                            >
-                              <div>Please connect your wallet.</div>
-                            </ReactTooltip>
-                            {/* <h1 className="mb-10 text-3xl font-bold">&#128296 Mint an Egg</h1> */}
-                            {isSoldOut ? (
-                              <div className="border border-black rounded">
-                                <p className="m-2 text-lg text-center text-gray-400 tracking-widest">
-                                  &#9888; Sold out
-                                </p>
-                              </div>
-                            ) : (
-                              <button
-                                onClick={startMint}
-                                disabled={isMinting || !connected}
-                                style={{
-                                  width: "250px",
-                                  height: "70px",
-                                  border: "3px solid rgb(190, 24, 93)",
-                                }}
-                                className={[
-                                  "mint-button tracking-widest flex items-center justify-center z-10 mx-auto font-bold bg-pink-50 text-pink-700 rounded-2xl",
-                                  isMinting || !connected
-                                    ? "cursor-not-allowed"
-                                    : "cursor-allowed hover:opacity-70",
-                                ].join(" ")}
+                    <div className="mint-btn-box">
+                      <>
+                        {new Date(mintStartDate).getTime() < Date.now() ? (
+                          <>
+                            <div className="flex flex-col pr-4">
+                              <ReactTooltip
+                                id="mint-info"
+                                type="dark"
+                                effect="solid"
+                                place="bottom"
+                                className="tooltip"
                               >
-                                {isMinting ? (
-                                  <ReactLoading
-                                    type="bars"
-                                    color="red"
-                                    height={20}
-                                    width={25}
-                                  />
-                                ) : (
-                                  <div style={{
-                                    fontFamily: 'eurostile-black-italic-italic, sans-serif', 
-                                    letterSpacing: '0.25rem',
-                                    fontSize: '14px',
-                                    fontWeight: 600
-                                  }}>MINT</div>
-                                )}
-                              </button>
-                            )}
-                            {!connected && (
-                              <div
-                                data-tip
-                                data-for="mint-info"
-                                className="blink text-center"
-                              >
-                                &#128161; Connect your wallet.
-                              </div>
-                            )}
-                          </div>
-                          {/* <div className="flex flex-col w-1/2">
-                          <h1 className="mb-10 text-3xl font-bold">Mint Many</h1>
-                          <MintMany />
-                        </div> */}
-                        </>
-                      ) : (
-                        <Countdown
-                          date={mintStartDate}
-                          onMount={({ completed }) =>
-                            completed && setIsMintLive(true)
-                          }
-                          onComplete={() => setIsMintLive(true)}
-                        />
-                      )}
-                    </>
-                  </div>
-                  <div className="pb-6 pr-4 w-full">
-                    <div className="text-sm text-white text-right tracking-widest">
-                      <Link href="/">BACK TO HOMEPAGE</Link>
+                                <div>Please connect your wallet.</div>
+                              </ReactTooltip>
+                              {/* <h1 className="mb-10 text-3xl font-bold">&#128296 Mint an Egg</h1> */}
+                              {isSoldOut ? (
+                                <div className="border border-black rounded">
+                                  <p className="m-2 text-lg text-center text-gray-400 tracking-widest">
+                                    &#9888; Sold out
+                                  </p>
+                                </div>
+                              ) : (
+                                <button
+                                  onClick={startMint}
+                                  disabled={isMinting || !connected}
+                                  style={{
+                                    height: "70px",
+                                    border: "3px solid rgb(190, 24, 93)",
+                                  }}
+                                  className={[
+                                    "mint-btn tracking-widest flex items-center justify-center z-10 mx-auto font-bold bg-pink-50 text-pink-700 rounded-2xl",
+                                    isMinting || !connected
+                                      ? "cursor-not-allowed"
+                                      : "cursor-allowed hover:opacity-70",
+                                  ].join(" ")}
+                                >
+                                  {isMinting ? (
+                                    <ReactLoading
+                                      type="bars"
+                                      color="red"
+                                      height={20}
+                                      width={25}
+                                    />
+                                  ) : (
+                                    <div style={{
+                                      fontFamily: 'eurostile-black-italic-italic, sans-serif', 
+                                      letterSpacing: '0.25rem',
+                                      fontSize: '14px',
+                                      fontWeight: 600
+                                    }}>MINT</div>
+                                  )}
+                                </button>
+                              )}
+                              {!connected && (
+                                <div
+                                  data-tip
+                                  data-for="mint-info"
+                                  className="blink text-center"
+                                >
+                                  &#128161; Connect your wallet.
+                                </div>
+                              )}
+                            </div>
+                            {/* <div className="flex flex-col w-1/2">
+                            <h1 className="mb-10 text-3xl font-bold">Mint Many</h1>
+                            <MintMany />
+                          </div> */}
+                          </>
+                        ) : (
+                          <Countdown
+                            date={mintStartDate}
+                            onMount={({ completed }) =>
+                              completed && setIsMintLive(true)
+                            }
+                            onComplete={() => setIsMintLive(true)}
+                          />
+                        )}
+                      </>
+                    </div>
+                    <div className="pb-6 pr-4 w-full">
+                      <div className="text-sm text-white text-right tracking-widest">
+                        <Link href="/">BACK TO HOMEPAGE</Link>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-           
-            <div className="w-50 justify-center items-center">
-              <div className="container-carousel">
-                <div className="carousel-main">
-                  <div className="carousel__face">
-                    {/* <span>This is something</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>Very special</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>Special is the key</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>For you</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>Just give it</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>A try</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>And see</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>How IT Works</span> */}
-                  </div>
-                  <div className="carousel__face">
-                    {/* <span>Woow</span> */}
+              </Grid>
+              <Grid item lg={6} md={6} xs={12} className="justify-center items-center">
+                <div className="container-carousel">
+                  <div className="carousel-main">
+                  <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>This is something</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>Very special</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>Special is the key</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>For you</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>Just give it</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>A try</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>And see</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>How IT Works</span> */}
+                    </div>
+                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
+                      {/* <span>Woow</span> */}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </Grid>
+            </Grid>
           </div>
         </div>
 

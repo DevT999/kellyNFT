@@ -97,6 +97,11 @@ export default makeStyles((theme) => ({
     opacity: 0.8,
     color: '#000',
     boxShadow: 'none',
-    height: '113px'
+    height: '113px',
+    padding: "0 20px",
+    [theme.breakpoints.down('sm')]: {
+      height: "193px",
+      padding: "0px",
+    },
   },
 }));

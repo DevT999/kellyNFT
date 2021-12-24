@@ -116,10 +116,18 @@ export default makeStyles((theme) => ({
     cursor: 'not-allowed',
   },
   root: {
-    // backgroundColor: theme.palette.common.white,
-    // backgroundColor: 'white',
-    // opacity: 0.6,
-    color: '#000',
-    boxShadow: 'none',
+    position: 'relative',
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingLeft: '0',
+    marginBottom: '0',
+    listStyle: 'none',
+    top: '113px',
+    zIndex: 100,    
+    [theme.breakpoints.down('sm')]: {
+      top: '193px',
+    },
   },
 }));

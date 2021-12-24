@@ -28,7 +28,7 @@ export default function Navbar() {
   /** If the navigation bar should enable shrink mode */
   const shouldShrink = useMediaQuery(theme.breakpoints.down('md'));
   return (
-      <ul className="navbar-nav mr-auto flex items-center flex-row absolute z-20" style={{top: '113px'}}>
+      <ul className={classes.root}>
         <li className={["nav-item active", clsx(classes.link)].join(" ")} style={{backgroundColor: router.pathname=='/'?'rgb(75, 20, 77)':'rgb(140, 94, 124)'}}>
           <Link href="/">
             <a className={clsx(classes.navLink)} style={{color: router.pathname=='/'?'white':'rgb(174, 159, 169)'}}>PURCHASE</a>

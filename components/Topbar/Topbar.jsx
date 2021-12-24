@@ -102,10 +102,6 @@ function Topbar({...props}) {
     // calling checkIfWalletIsConnected() function for checking solana in window or not
     
     const onLoad = async () => {
-      // console.log("=====>", walletButton, pubKey, connected)
-      // if (!walletButton&&pubKey.length==0) {
-      //   // window.location.reload();
-      // }
       // await checkIfWalletIsConnected();
     };
 
@@ -119,71 +115,65 @@ function Topbar({...props}) {
   return (
   <Nav className="navbar navbar-expand-lg pt-0 pb-0">
     <AppBar className={classes.root}>
-      <Toolbar>
-        {/* <Container className={clsx({ 'no-padding': shouldShrink })}> */}
-          <Grid container alignItems="center">
-            <Link href="/">
-              <a className="navbar-brand text-black">
-                <Typography
-                  className={clsx(classes.logoText, 'no-select')}
-                  variant="h5"
-                >
-                  <div className='flex flex-row items-center'>
-                    <img src='img/sol.png'></img>
-                    <div className='pl-2 logo-title tracking-wider'>FATEFUL YOUTH</div>
-                  </div>
-                  <div className='flex flex-row items-center'>
-                    <div style={{width: '72px'}}></div>
-                    <div className='logo-sub-title bg-black px-2 mb-2'>SOLANA COLLECTION</div>
-                  </div>
-                </Typography>
-              </a>
-            </Link>
-            {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button> */}
+      <Grid container alignItems="center">
+        <Link href="/">
+          <a className="navbar-brand text-black">
+            <Typography
+              className={clsx(classes.logoText, 'no-select')}
+              variant="h5"
+            >
+              <div className='flex flex-row items-center'>
+                <img src='img/sol.png'></img>
+                <div className='logo-title'>FATEFUL YOUTH</div>
+              </div>
+              <div className='flex flex-row items-center'>
+                <div style={{width: '68px'}}></div>
+                <div className='logo-sub-title bg-black px-2 mb-2'>SOLANA COLLECTION</div>
+              </div>
+            </Typography>
+          </a>
+        </Link>
+        {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button> */}
 
-            <div className={classes.grow} />
-            <Hidden smDown>
-              <ul className="navbar-nav mr-auto flex flex-column items-center">
-                <li className="nav-item mt-2">
-                  {/* <checkWalletDetails.Provider
-                    value={{ ...walletAddress, setWalletAddress, isSolana }}
-                  >
-                    <Wallet />
-                  </checkWalletDetails.Provider> */}
-                  <WalletMultiButton className='wallet_button' />
-                  {/* <WalletMultiButton style={{visibility: connected?'visible':'hidden', background: connected&&'transparent', color: connected&&'black'}}/> */}
-                </li>
-                <ul className="navbar-nav mr-auto w-100 flex justify-center flex-row py-2">
-                  <li className="nav-item pl-2 pr-2">
-                    <a
-                      href="https://discord.gg/kspUghEFad"
-                      target="_blank"
-                      rel="noreferrer"
-                      className='tracking-widest'
-                      style={{fontFamily: 'eurostile-black-italic-italic, sans-serif'}}
-                    >
-                      DISCORD
-                    </a>
-                  </li>
-                  <li className="nav-item pl-4">
-                    <a
-                      href="https://twitter.com/fatefulyouth_"
-                      target="_blank"
-                      rel="noreferrer"
-                      className='tracking-widest'
-                      style={{fontFamily: 'eurostile-black-italic-italic, sans-serif'}}
-                    >
-                      TWITTER
-                    </a>
-                  </li>
-                </ul>
-              </ul>
-            </Hidden>
-          </Grid>
-        {/* </Container> */}
-      </Toolbar>
+        <div className={classes.grow} />
+        <ul className="navbar-nav flex flex-column connect-btn">
+          <li className="nav-item mt-2">
+            {/* <checkWalletDetails.Provider
+              value={{ ...walletAddress, setWalletAddress, isSolana }}
+            >
+              <Wallet />
+            </checkWalletDetails.Provider> */}
+            <WalletMultiButton className='wallet_button' />
+            {/* <WalletMultiButton style={{visibility: connected?'visible':'hidden', background: connected&&'transparent', color: connected&&'black'}}/> */}
+          </li>
+          <ul className="navbar-nav flex justify-center flex-row py-2 social-link-box">
+            <li className="nav-item pl-2 pr-2">
+              <a
+                href="https://discord.gg/kspUghEFad"
+                target="_blank"
+                rel="noreferrer"
+                className='tracking-widest'
+                style={{fontFamily: 'eurostile-black-italic-italic, sans-serif'}}
+              >
+                DISCORD
+              </a>
+            </li>
+            <li className="nav-item pl-4">
+              <a
+                href="https://twitter.com/fatefulyouth_"
+                target="_blank"
+                rel="noreferrer"
+                className='tracking-widest'
+                style={{fontFamily: 'eurostile-black-italic-italic, sans-serif'}}
+              >
+                TWITTER
+              </a>
+            </li>
+          </ul>
+        </ul>
+      </Grid>
     </AppBar>
   </Nav>
   )

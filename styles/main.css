@@ -41,20 +41,65 @@ Use a better box model (opinionated).
 .logo-title {
   font-family: 'eurostile-black-italic-italic', sans-serif;
   font-style: italic;
-  font-size: 44px;
+  font-size: 42px;
   font-weight: 900;
+  letter-spacing: 0.15em;
+  padding-left: 10px;
+  white-space: nowrap;
 }
 
-
+@media only screen and (max-width : 768px) {
+  .logo-title {
+    font-size: 30px;
+    letter-spacing: 0.05em;
+  }
+}
+.top-title-space {
+  width: 70px;
+}
+@media only screen and (max-width : 768px) {
+  .top-title-space {
+    width: 30px;
+  }
+}
 .logo-sub-title {
   font-family: 'eurostile-black-italic-italic', sans-serif;
   font-size: 24px;
   font-weight: 400;
   color: white;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
+  text-align: center;
+  padding-left: 1rem !important;
+  padding-right: 0.5rem !important;
 }
 
-.mint-button:active {
+@media only screen and (max-width : 768px) {
+  .logo-sub-title {
+    font-size: 18px;
+    letter-spacing: 0.1em;
+  }
+}
+.connect-btn {
+  align-items: center;
+}
+@media only screen and (max-width : 768px) {
+  .connect-btn {
+    width: 100%;
+    align-items: end;
+    margin-right: 10px;
+  }
+}
+.social-link-box {
+  justify-content: center;
+}
+@media only screen and (max-width : 768px) {
+  .social-link-box {
+    width: 100%;
+    justify-content: flex-end !important;
+    margin-right: 10px;
+  }
+}
+.mint-btn:active {
   background-color: rgb(223, 242, 248);
   color: rgb(220, 124, 93);
 }

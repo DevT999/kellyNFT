@@ -22,14 +22,7 @@ export default makeStyles(() => ({
     zIndex: 0,
   },
   root: {
-    // [`${theme.breakpoints.up('xs')} and (orientation: landscape)`]: {
-    //   marginTop: 48,
-    //   minHeight: `calc(100vh - 48px)`,
-    // },
-    // [theme.breakpoints.up('sm')]: {
-    //   marginTop: 64,
-    //   minHeight: `calc(100vh - 64px)`,
-    // },
+    top: '0px',
     backgroundImage: `url('/img/top.png')`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -37,13 +30,7 @@ export default makeStyles(() => ({
     position: 'fixed',
     width: '100%',
     zIndex: 0,
-    // overflow: 'auto',
+    overflow: 'auto',
     maxHeight: '100%;',
-    // backgroundPosition: 'center',
-    // backgroundRepeat: 'no-repeat',
-    // backgroundSize: '100%',
-    // marginTop: '-64px',
-    // backgroundColor: '#000',
-    // paddingTop: 36,
   },
 }));
