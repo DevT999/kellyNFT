@@ -23,7 +23,7 @@ export default makeStyles(() => ({
   },
   root: {
     top: '0px',
-    backgroundImage: `url('/img/top.png')`,
+    backgroundImage: `url('/img/main.png')`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100%',

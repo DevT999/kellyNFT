@@ -113,7 +113,6 @@ function Topbar({...props}) {
   }, []);
 
   return (
-  <Nav className="navbar navbar-expand-lg pt-0 pb-0">
     <AppBar className={classes.root}>
       <Grid container alignItems="center">
         <Link href="/">
@@ -123,12 +122,12 @@ function Topbar({...props}) {
               variant="h5"
             >
               <div className='flex flex-row items-center'>
-                <img src='img/sol.png'></img>
-                <div className='logo-title'>FATEFUL YOUTH</div>
-              </div>
-              <div className='flex flex-row items-center'>
-                <div style={{width: '68px'}}></div>
-                <div className='logo-sub-title bg-black px-2 mb-2'>SOLANA COLLECTION</div>
+                <img className={classes.logoImg} src='/img/sol.png'/>
+                <img
+                  className={classes.titleImg}
+                  src='/img/title.png'
+                  alt="alt"
+                />
               </div>
             </Typography>
           </a>
@@ -140,42 +139,11 @@ function Topbar({...props}) {
         <div className={classes.grow} />
         <ul className="navbar-nav flex flex-column connect-btn">
           <li className="nav-item mt-2">
-            {/* <checkWalletDetails.Provider
-              value={{ ...walletAddress, setWalletAddress, isSolana }}
-            >
-              <Wallet />
-            </checkWalletDetails.Provider> */}
             <WalletMultiButton className='wallet_button' />
-            {/* <WalletMultiButton style={{visibility: connected?'visible':'hidden', background: connected&&'transparent', color: connected&&'black'}}/> */}
           </li>
-          <ul className="navbar-nav flex justify-center flex-row py-2 social-link-box">
-            <li className="nav-item pl-2 pr-2">
-              <a
-                href="https://discord.gg/kspUghEFad"
-                target="_blank"
-                rel="noreferrer"
-                className='tracking-widest'
-                style={{fontFamily: 'eurostile-black-italic-italic, sans-serif'}}
-              >
-                DISCORD
-              </a>
-            </li>
-            <li className="nav-item pl-4">
-              <a
-                href="https://twitter.com/fatefulyouth_"
-                target="_blank"
-                rel="noreferrer"
-                className='tracking-widest'
-                style={{fontFamily: 'eurostile-black-italic-italic, sans-serif'}}
-              >
-                TWITTER
-              </a>
-            </li>
-          </ul>
         </ul>
       </Grid>
     </AppBar>
-  </Nav>
   )
 }
 

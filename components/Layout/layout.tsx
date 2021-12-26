@@ -50,7 +50,7 @@ export default function Layout({ children }: LayoutProps): ReactElement {
       {/* <SocialLinks /> */}
       <Topbar />
       {/* <Topbar /> */}
-      <Navbar />
+      {/* <Navbar /> */}
       <main className={classes.root} onClick={() => setReverse(!reverse)}>
         {/* <Particles
           id="particles-js"

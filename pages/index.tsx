@@ -216,19 +216,13 @@ function Home({...props}) {
       <body className="w-100 leading-relaxed tracking-wide flex flex-col bg-transparent">
         <Head>
           {/* <title>MetaEggs.city</title> */}
-          <meta name="description" content="NFT Eggs, on solana" />
+          <meta
+            name="description"
+            content="This is Fateful Youth NFT dapp for SOL."
+          />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"></link>
+          <link href="https://www.dafontfree.net/embed/ZXVyb3N0aWxlLWJsYWNrLWl0YWxpYy1pdGFsaWMmZGF0YS8yNC9lLzEyMzg0Ni9FVVJPU0JJSS50dGY" rel="stylesheet" type="text/css"/>
           <link rel="icon" href="/img/sol.png" />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            // charset="UTF-8"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-          />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-          />
         </Head>
 
         <div className="flex flex-col items-center main-container">
@@ -241,39 +235,52 @@ function Home({...props}) {
           </div>            
 
           <div
-            className="h-100 w-100 flex flex-row justify-center main-body"
+            className="h-100 w-100 main-body"
             style={{ marginTop: isMintLive?"210px":"20px" }}
           >
-            <Grid container>
-              <Grid item lg={6} md={6} xs={12} className="justify-center items-center">
-                <div className="eventInfo">
-                  <div className="mint-box flex flex-col">
-                    <div className="flex flex-row items-center w-100 pl-8">
-                      <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
-                        Mint Cost :{" "}
-                      </h5>
-                      <div className="text-lg text-white tracking-widest">
-                        3 SOL
-                      </div>
-                    </div>
-                    <div className="flex flex-row items-center w-100 pl-8">
-                      <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
-                        Supply :{" "}
-                      </h5>
-                      <div className="text-lg text-gray-400 tracking-widest">
+            <div className="left-panel">
+              <div className="mint-box">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div className="mint-box-name">
+                          Mint Cost :{" "}
+                        </div>
+                      </td>
+                      <td>
+                        <div className="mint-box-name-white">
+                          3 SOL
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="mint-box-name">
+                          Supply :{" "}
+                        </div>
+                      </td>
+                      <td>
+                        <div className="mint-box-val">
                         {nftsData.itemsRemaining} / {nftsData.itemsAvailable}
-                      </div>
-                    </div>
-                    <div className="flex flex-row items-center w-100 pl-8">
-                      <h5 className="text-lg text-white text-left px-4 py-3 tracking-widest">
-                        Sale :{" "}
-                      </h5>
-                      <div className="text-lg text-gray-400 tracking-widest">
-                        Public
-                      </div>
-                    </div>
-                    <div className="mint-btn-box">
-                      <>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="mint-box-name">
+                          Sale :{" "}
+                        </div>
+                      </td>
+                      <td>
+                        <div className="mint-box-val">
+                          Public
+                        </div>
+                      </td>
+                    </tr>
+                    <tr className="text-center">
+                      <td colSpan={2}>
+                        <>
                         {new Date(mintStartDate).getTime() < Date.now() ? (
                           <>
                             <div className="flex flex-col pr-4">
@@ -298,7 +305,8 @@ function Home({...props}) {
                                   onClick={startMint}
                                   disabled={isMinting || !connected}
                                   style={{
-                                    height: "70px",
+                                    marginTop: '30px',
+                                    height: "60px",
                                     border: "3px solid rgb(190, 24, 93)",
                                   }}
                                   className={[
@@ -349,50 +357,35 @@ function Home({...props}) {
                             onComplete={() => setIsMintLive(true)}
                           />
                         )}
-                      </>
-                    </div>
-                    <div className="pb-6 pr-4 w-full">
-                      <div className="text-sm text-white text-right tracking-widest">
-                        <Link href="/">BACK TO HOMEPAGE</Link>
-                      </div>
-                    </div>
+                        </>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className="back-btn">
+                  <div className="text-sm text-white text-right tracking-widest">
+                    <Link href="/">BACK TO HOMEPAGE</Link>
                   </div>
                 </div>
-              </Grid>
-              <Grid item lg={6} md={6} xs={12} className="justify-center items-center">
-                <div className="container-carousel">
-                  <div className="carousel-main">
-                  <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>This is something</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>Very special</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>Special is the key</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>For you</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>Just give it</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>A try</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>And see</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>How IT Works</span> */}
-                    </div>
-                    <div className={windowResize>768?"carousel__face":"carousel_m__face"}>
-                      {/* <span>Woow</span> */}
-                    </div>
-                  </div>
-                </div>
-              </Grid>
-            </Grid>
+              </div>
+            </div>
+              
+            <div className="right-panel">
+              <p className="main-note">A Genesis Collection Photograph is the key to unlocking the most photorealistic 3D avatar to ever exist in a digitally native environment. The NFT also grants the holder exclusive community membership. </p>
+              <p/>
+              <div className="sub-note">This includes:</div>
+              <div className="sub-note">
+                <ul>
+                  <li>Exclusive Genesis <span className="red-text">IRL and metaverse events</span> (travel funded if applicable)</li>
+                  <li>Exclusive, limited edition <span className="red-text">Fateful Youth Genesis Merchandise</span></li>
+                  <li>Participation in weekly/monthly artist showcases both IRL and Virtual</li>
+                  <li>Premier access to the creatives and brands behind</li>
+                  <li>Access to Creator Metaverse Launchpad</li>
+                  <li>Future <span className="red-text">token allocation</span> (Details TBA)</li>
+                  <li>Exclusive <span className="red-text">3D Scan Pass</span> for custom avatar or personal artistic endeavor</li>
+                </ul>
+              </div>
+            </div>  
           </div>
         </div>
 

@@ -92,16 +92,33 @@ export default makeStyles((theme) => ({
     cursor: 'not-allowed',
   },
   root: {
-    // backgroundColor: theme.palette.common.white,
-    backgroundColor: 'white',//'white',
-    opacity: 0.8,
+    display: "flex",
+    justifyContent: "center",
+    // backgroundImage: `url('/assets/img/top.png')`,
+    // backgroundRepeat: "no-repeat",
+    // backgroundSize: "cover",
+    background: 'black',
     color: '#000',
     boxShadow: 'none',
-    height: '113px',
-    padding: "0 20px",
+    padding: "20px",
     [theme.breakpoints.down('sm')]: {
-      height: "193px",
-      padding: "0px",
+      padding: "10px 0px",
+    },
+  },
+  titleImg: {
+    height: "50px",
+    width: "auto",
+    [theme.breakpoints.down('sm')]: {
+      height: "25px",
+      width: "auto",
+    },
+  },
+  logoImg: {
+    height: "70px",
+    width: "50px",
+    [theme.breakpoints.down('sm')]: {
+      height: "60px",
+      width: "40px",
     },
   },
 }));
