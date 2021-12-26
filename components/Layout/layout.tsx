@@ -36,6 +36,30 @@ export default function Layout({ children }: LayoutProps): ReactElement {
         <link href="https://www.dafontfree.net/embed/ZXVyb3N0aWxlLWJsYWNrLWl0YWxpYy1pdGFsaWMmZGF0YS8yNC9lLzEyMzg0Ni9FVVJPU0JJSS50dGY" rel="stylesheet" type="text/css"/>
         <link rel="icon" href="/img/sol.png" />
         <link
+          rel="preload"
+          href="/font/EuroStyleNormal.ttf"
+          as="font"
+          crossOrigin=""
+          />
+        <link
+          rel="preload"
+          href="/font/EurostileOblique.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/font/EurostileExtended.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/font/EurostileBold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
           rel="stylesheet"
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"

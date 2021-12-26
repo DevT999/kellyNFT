@@ -375,7 +375,7 @@ function Home({...props}) {
               <p/>
               <div className="sub-note">This includes:</div>
               <div className="sub-note">
-                <ul>
+                <ul style={{listStyle: 'inherit', paddingLeft: '2rem'}}>
                   <li>Exclusive Genesis <span className="red-text">IRL and metaverse events</span> (travel funded if applicable)</li>
                   <li>Exclusive, limited edition <span className="red-text">Fateful Youth Genesis Merchandise</span></li>
                   <li>Participation in weekly/monthly artist showcases both IRL and Virtual</li>

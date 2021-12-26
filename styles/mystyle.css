@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'EuroStyleNormal';
-    src: local('EuroStyleNormal'), url(./font/EuroStyleNormal.ttf) format('opentype');
+    src: local('EuroStyleNormal'), url(/font/EuroStyleNormal.ttf) format('opentype');
   }
   
   @font-face {
     font-family: 'EurostileOblique';
-    src: local('EurostileOblique'), url(./font/EurostileOblique.ttf) format('opentype');
+    src: local('EurostileOblique'), url(/font/EurostileOblique.ttf) format('opentype');
   }
   
   @font-face {
     font-family: 'EurostileExtended';
-    src: local('EurostileExtended'), url(./font/EurostileExtended.ttf) format('opentype');
+    src: local('EurostileExtended'), url(/font/EurostileExtended.ttf) format('opentype');
   }
   
   @font-face {
     font-family: 'EurostileBold';
-    src: local('EurostileBold'), url(./font/EurostileBold.ttf) format('opentype');
+    src: local('EurostileBold'), url(/font/EurostileBold.ttf) format('opentype');
   }
 
 .hero-cta {
@@ -165,7 +165,7 @@
   /*------------ text blink css ----------*/
 
   .blink {
-    font-size: 20px;
+    font-size: 16px;
     font-style: italic;
     color: #ccc;
     animation: blinker 5s linear infinite;
@@ -449,7 +449,7 @@
     color: white;
     margin: 20px 20px 20px -20px;
     padding: 10px 30px;
-    z-index: "200";
+    z-index: 200;
 }
 @media only screen and (max-width: 1366px) {
     .right-panel {
@@ -470,8 +470,16 @@
     }
 }
 .main-note {
+    letter-spacing: initial;
     font-size: 20px;
     font-family: EurostileExtended, Arial, serif;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 @media only screen and (max-width: 768px) {
     .main-note {
@@ -479,6 +487,7 @@
     }
 }
 .sub-note {
+    letter-spacing: initial;
     font-size: 18px;
     font-family: EurostileExtended, Arial, serif;
 }
@@ -488,6 +497,7 @@
     }
 }
 .red-text {
+    letter-spacing: initial;
     color: rgb(208, 20, 138);
     font-size: 18px;
     font-family: EurostileExtended, Arial, serif;
@@ -511,7 +521,7 @@
     }
 }
 .mint-btn {
-    width: 250px;
+    width: 200px;
 }
 @media only screen and (max-width: 768px) {
     .mint-btn {
