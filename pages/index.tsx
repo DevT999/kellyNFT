@@ -235,7 +235,7 @@ function Home({...props}) {
           </div>            
 
           <div
-            className="h-100 w-100 main-body"
+            className="h-auto w-100 main-body"
             style={{ marginTop: isMintLive?"210px":"20px" }}
           >
             <div className="left-panel">
@@ -371,18 +371,19 @@ function Home({...props}) {
             </div>
               
             <div className="right-panel">
-              <p className="main-note">A Genesis Collection Photograph is the key to unlocking the most photorealistic 3D avatar to ever exist in a digitally native environment. The NFT also grants the holder exclusive community membership. </p>
-              <p/>
+              <div className="main-note">A Genesis Collection Photograph is the key to unlocking the most photorealistic 3D avatar to ever exist in a digitally native environment. The NFT also grants the holder exclusive community membership. </div>
+              <br/>
               <div className="sub-note">This includes:</div>
               <div className="sub-note">
                 <ul style={{listStyle: 'inherit', paddingLeft: '2rem'}}>
-                  <li>Exclusive Genesis <span className="red-text">IRL and metaverse events</span> (travel funded if applicable)</li>
                   <li>Exclusive, limited edition <span className="red-text">Fateful Youth Genesis Merchandise</span></li>
-                  <li>Participation in weekly/monthly artist showcases both IRL and Virtual</li>
-                  <li>Premier access to the creatives and brands behind</li>
-                  <li>Access to Creator Metaverse Launchpad</li>
-                  <li>Future <span className="red-text">token allocation</span> (Details TBA)</li>
-                  <li>Exclusive <span className="red-text">3D Scan Pass</span> for custom avatar or personal artistic endeavor</li>
+                  <li>Exclusive access to weekly/monthly artist showcases both IRL and virtual</li>
+                  <li>Premier access to the creatives and brands behind the looks</li>
+                  <li>Exclusive Genesis <span className="red-text">IRL and metaverse events</span> (travel funded if applicable)</li>
+                  <li>Opportunity to collaborate with core creatives on photoshoots, and brand/clothing</li>
+                  <li><span className="red-text">Upcoming token allocation</span> (Details TBA)</li>
+                  <li>Access to <span className="red-text"> Creator Metaverse Launchpad</span></li>
+                  <li>Exclusive Genesis <span className="red-text">3D Scan Pass</span> for customized avatar or personal artistic endeavor</li>
                 </ul>
               </div>
             </div>  

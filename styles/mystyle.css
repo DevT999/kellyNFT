@@ -412,7 +412,7 @@
     }
 }
 .left-panel {
-    height: 460px;
+    height: 490px;
     width: 40%;
     float: left;
     background-color: rgba(75, 20, 77, 0.3);
@@ -427,7 +427,7 @@
 }
 @media only screen and (max-width: 1265px) {
     .left-panel {
-        height: 490px;
+        height: 520px;
         padding: 10px;
     }
 }
@@ -442,7 +442,7 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    height: 420px;
+    height: 450px;
     width: 60%;
     float: left;
     background-color: rgb(0, 0, 0);
@@ -453,7 +453,7 @@
 }
 @media only screen and (max-width: 1366px) {
     .right-panel {
-        height: 450px;
+        height: 480px;
     }
 }
 @media only screen and (max-width: 1265px) {
@@ -464,6 +464,7 @@
 }
 @media only screen and (max-width: 768px) {
     .right-panel {
+        padding: 10px;
         width: 100%;
         margin: -20px 0px 0px 0px;
         height: 100%;
@@ -473,13 +474,13 @@
     letter-spacing: initial;
     font-size: 20px;
     font-family: EurostileExtended, Arial, serif;
-    margin-top: 0rem;
+    /* margin-top: 0rem;
     margin-bottom: 1rem;
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-end: 0px; */
 }
 @media only screen and (max-width: 768px) {
     .main-note {
@@ -570,7 +571,7 @@
     font-family: EurostileBold, Arial, serif;
     font-size: 1.125rem;
     line-height: 1.75rem;
-    padding: 1rem 1.5rem 1rem 0rem;
+    padding: 1rem 5rem 1rem 0rem;
     text-align: start;
 }
 @media only screen and (max-width : 768px) {
@@ -593,14 +594,14 @@
 }
 .back-btn {
     float: right;
-    padding-top: 30px;
+    padding-top: 50px;
     width: 100%;
     position: relative;
     padding-right: 10px;
 }
 @media only screen and (max-width : 768px) {
     .back-btn {
-        padding: 10px;
+        padding: 50px 10px 10px 10px;
     }
 }
 .event-img {
