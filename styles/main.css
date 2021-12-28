@@ -85,7 +85,7 @@ Use a better box model (opinionated).
 @media only screen and (max-width : 768px) {
   .connect-btn {
     width: 100%;
-    align-items: end;
+    align-items: center;
     margin-right: 10px;
   }
 }
