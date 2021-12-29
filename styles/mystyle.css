@@ -618,6 +618,16 @@
         padding: 50px 10px 10px 10px;
     }
 }
+.back-text {
+    color: white;
+    font-family: EurostileExtended, Arial, serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+}
+.back-text:hover {
+    cursor: pointer;
+}
 .event-img {
     /* max-width: 92%;
     height: 95%; */

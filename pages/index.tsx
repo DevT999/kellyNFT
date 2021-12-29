@@ -364,7 +364,14 @@ function Home({...props}) {
                 </table>
                 <div className="back-btn">
                   <div className="text-sm text-white text-right tracking-widest">
-                    <Link href="/">BACK TO HOMEPAGE</Link>
+                    <a
+                      href="https://fatefulyouth.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="back-text"
+                    >
+                      BACK TO HOMEPAGE
+                    </a>
                   </div>
                 </div>
               </div>
