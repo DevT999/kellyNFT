@@ -254,7 +254,7 @@ function Home({...props}) {
                         </div>
                       </td>
                     </tr>
-                    <tr>
+                    <tr style={{display: 'none'}}>
                       <td>
                         <div className="mint-box-name">
                           Supply :{" "}
